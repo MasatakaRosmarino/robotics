@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Electronics Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../../index.html">Science tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../electronics/analog-main.html">analog</a>
+                            <a class="dropdown-item text-capitalize" href="../digital-main.html">digital</a>
+                            <a class="dropdown-item text-capitalize" href="../arduino-main.html">arduino</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../physics/mechanics-main.html">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-uppercase my-4">bjt pnp transistor</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 1:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>1.25V AA recargeable batteries X4</li>
+                        <li>AA battery holder</li>
+                        <li>1M &#8486; resistor X1</li>
+                        <li>220 &#8486; resistor X1</li>
+                        <li>red LED (3mm or 5 mm)</li>
+                        <li>2N2222A BJT transistor in a TO-92 case</li>
+                        <li>Multimeter</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Preparation</h4>
+
+                    <p>Before setting up the circuit, on the multimeter measure the hFE of the transistor</p>
+
+                    <p>NOTE: this value is subject to change as transistors are not physically identical.</p>
+
+                    <h4>setup</h4>
+                    <p>drawing here</p>
+
+                    <h4 class="btn btn-outline-info">Observation</h4>
+
+                    <h5>LED and 220 &ohm; resistors connected between the emitter and V<sub>IN</sub></h5>
+                    <h5>Values measured with multimeters are:</h5>
+                    <ul>
+                      <li>hFE: 171</li>
+                      <li>Battery pack voltage: 5.06 V</li>
+                      <li>Resistor at the base: 1.004 M &ohm;</li>
+                      <li>Resistor at the collector: 217 &ohm;</li>
+                      <li>Voltages across:
+                        <ul>
+                          <li>resistor at the base: 2.55 V</li>
+                          <li>resistor at the emitter: 0.105 V</li>
+                          <li>LED: 1.69 V</li>
+                          <li>base and emitter: 0.61 V</li>
+                          <li>base and collector: 2.54 V</li>
+                          <li>collector and emitter: 3.16 V</li>
+                          <li>transistor+LED+resistor: 4.99 V</li>
+                        </ul>
+                      </li>
+                      <li>Currents through:
+                        <ul>
+                          <li>base: 2.5 uA</li>
+                          <li>collector: 0.47 mA</li>
+                          <li>emitter: 0.47 mA</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <h5>LED and 220 &ohm; resistors connected between the collector and the ground</h5>
+                    <h5>Measured values are:</h5>
+                    <ul>
+                      <li>hFE: 171</li>
+                      <li>Power supply voltage: 5.06 V</li>
+                      <li>Resistor at the base: 1.004 M &ohm;</li>
+                      <li>Resistor at the collector: 217 &ohm;</li>
+                      <li>Voltages across:
+                        <ul>
+                          <li>resistor at the base: 4.35 V</li>
+                          <li>resistor at the collector: 0.17 V</li>
+                          <li>LED: 1.71 V</li>
+                          <li>base and emitter: 0.63 V</li>
+                          <li>base and collector: 2.4 V</li>
+                          <li>collector and emitter: 3.04 V</li>
+                          <li>transistor+LED+resistor: 5.006 V</li>
+                        </ul>
+                      </li>
+                      <li>Currents through:
+                        <ul>
+                          <li>base: 4.2 uA</li>
+                          <li>collector: 0.79 mA</li>
+                          <li>emitter: 0.81 mA</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <p>NOTE: If the load (LED + 220 &ohm; resistor) is placed between the emitter and the ground, the current through the base and the load is roughly half. </p>
+
+                    <p>I<sub>E</sub> / I<sub>B</sub> =  /  = ~</p>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 2:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>9 V battery</li>
+                        <li>Optional: 9 V battery connector</li>
+                        <li>1M &#8486; resistor</li>
+                        <li>470 &#8486; resistor</li>
+                        <li>red LED (3mm or 5 mm)</li>
+                        <li>2N2222A BJT transistor</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Preparation</h4>
+                    <p>drawing here</p>
+
+                    <h4 class="btn btn-outline-info">Observation</h4>
+
+                    <h5>LED and 470 &ohm; resistors connected between the emitter and V<sub>IN</sub></h5>
+                    <h5>Measured values are:</h5>
+
+                    <ul>
+                      <li>hFE: 171</li>
+                      <li>Battery pack voltage: 8.15 V</li>
+                      <li>Resistor at the base: 1.004 M &ohm;</li>
+                      <li>Resistor at the collector: 466.7 &ohm;</li>
+                      <li>Voltages across:
+                        <ul>
+                          <li>resistor at the base: 5.24 V</li>
+                          <li>resistor at the emitter: 0.48 V</li>
+                          <li>LED: 1.72 V</li>
+                          <li>base and emitter: 0.63 V</li>
+                          <li>base and collector: 5.24 V</li>
+                          <li>collector and emitter: 5.93 V</li>
+                          <li>transistor+LED+resistor: 8.14 V</li>
+                        </ul>
+                      </li>
+                      <li>Currents through:
+                        <ul>
+                          <li>base: 5.2 uA</li>
+                          <li>collector: 1.01 mA</li>
+                          <li>emitter: 1.02 mA</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <h5>LED and 470 &ohm; resistors connected between the collector and the ground</h5>
+
+                    <h5>Measured values are:</h5>
+                    <ul>
+                      <li>hFE: 171</li>
+                      <li>Power supply voltage: 8.18 V</li>
+                      <li>Resistor at the base: 1.004 M &ohm;</li>
+                      <li>Resistor at the collector: 466.7 &ohm;</li>
+                      <li>Voltages across:
+                        <ul>
+                          <li>resistor at the base: 7.41 V</li>
+                          <li>resistor at the collector: 0.67 V</li>
+                          <li>LED: 1.74 V</li>
+                          <li>base and emitter: 0.64 V</li>
+                          <li>base and collector: 4.6 V</li>
+                          <li>collector and emitter: 5.61 V</li>
+                          <li>transistor+LED+resistor: 7.97 V</li>
+                        </ul>
+                      </li>
+                      <li>Currents through:
+                        <ul>
+                          <li>base: 7.1 uA</li>
+                          <li>collector: 1.42 mA</li>
+                          <li>emitter: 1.42 mA</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <p>hFE = I<sub>E</sub> / I<sub>B</sub> = 1.71 /  = ~</p>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 3: (to be finished)</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>10V 1A power supply</li>
+                        <li>power supply connector</li>
+                        <li>1M &#8486; resistor X1</li>
+                        <li>470 &#8486; resistor X1</li>
+                        <li>red LED (3mm or 5 mm)</li>
+                        <li>2N2222A BJT transistor in a TO-92 case</li>
+                        <li>Multimeter</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Preparation</h4>
+
+                    <p>Before setting up the circuit, on the multimeter measure the hFE of the transistor</p>
+
+                    <p>NOTE: this value is subject to change as transistors are not physically identical.</p>
+
+                    <h4>setup</h4>
+                    <p>drawing here</p>
+
+                    <h4 class="btn btn-outline-info">Observation</h4>
+
+                    <h5>LED and 470 &ohm; resistors connected between the collector and V<sub>IN</sub></h5>
+                    <h5>Values measured with multimeters are:</h5>
+                    <ul>
+                      <li>hFE: </li>
+                      <li>Power supply voltage:  V</li>
+                      <li>Resistor at the base:  M &ohm;</li>
+                      <li>Resistor at the collector:  &ohm;</li>
+                      <li>Voltages across:
+                        <ul>
+                          <li>resistor at the base:  V</li>
+                          <li>resistor at the collector:  V</li>
+                          <li>LED:  V</li>
+                          <li>base and emitter:  V</li>
+                          <li>base and collector:  V</li>
+                          <li>collector and emitter:  V</li>
+                          <li>transistor+LED+resistor:  V</li>
+                        </ul>
+                      </li>
+                      <li>Currents through:
+                        <ul>
+                          <li>base:  uA</li>
+                          <li>collector:  mA</li>
+                          <li>emitter:  mA</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <h5>LED and 470 &ohm; resistors connected between the emitter and the ground</h5>
+                    <h5>Measured values are:</h5>
+                    <ul>
+                      <li>hFE: </li>
+                      <li>Power supply voltage:  V</li>
+                      <li>Resistor at the base:  M &ohm;</li>
+                      <li>Resistor at the collector:  &ohm;</li>
+                      <li>Voltages across:
+                        <ul>
+                          <li>resistor at the base:  V</li>
+                          <li>resistor at the emitter:  V</li>
+                          <li>LED:  V</li>
+                          <li>base and emitter:  V</li>
+                          <li>base and collector:  V</li>
+                          <li>collector and emitter:  V</li>
+                          <li>transistor+LED+resistor:  V</li>
+                        </ul>
+                      </li>
+                      <li>Currents through:
+                        <ul>
+                          <li>base:  uA</li>
+                          <li>collector:  mA</li>
+                          <li>emitter:  mA</li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <h3>To do experiment</h3>
+
+        <ul>
+          <li>experiment with voltage applied to base by voltage divider</li>
+          <li>check relationship between voltage and current</li>
+        </ul>
+    </div>
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>

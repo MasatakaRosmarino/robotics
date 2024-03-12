@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Electronics Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../../index.html">Science tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../electronics/analog-main.html">analog</a>
+                            <a class="dropdown-item text-capitalize" href="../digital-main.html">digital</a>
+                            <a class="dropdown-item text-capitalize" href="../arduino-main.html">arduino</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../physics/mechanics-main.html">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-uppercase my-4">capacitors</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 1:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>9V battery</li>
+                        <li>555 chip</li>
+                        <li>Optional: 9V battery connector</li>
+                        <li>1000 &#8486; resistor</li>
+                        <li>10K &#8486; resistors X2</li>
+                        <li>Jumper cables X6</li>
+                        <li>green or yellow LED (3mm or 5 mm)</li>
+                        <li>4.7 uF electrolytic capacitor</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Preparation</h4>
+                    <ol>
+                        <li>on the Breadboard place: 
+                            <ul>
+                                <li>the 555 chip</li>
+                                <li>the capacitor connecting pin 1 and 2 of the 555 chip</li>
+                                <li>a jumper wire connecting pin 1 of the chip to ground</li>
+                                <li>a jumper wire connecting pin 2 to pin 6</li>
+                                <li>the 1000 &#8486; resistor connecting pin 3 of the chip to a neutral rail of the breadboard</li>
+                                <li>the positive pin of the LED connecting the loose end of the 1000 &#8486; resistor, and the negative lead connecting the ground</li>
+                                <li>the red LED with the longer pin in line with one of the pins of the resistor previously placed</li>
+                                <li>a jumper wire connecting pin 4 to pin 8, or pin 4 to the positive end of the source</li>
+                                <li>a 10K &#8486; resistor connecting pin 6 to 7</li>
+                                <li>a 10K &#8486; resistor connecting pin 7 to the positive end of the source</li>
+                                <li>a jumper wire connecting pin 8 to the positive end of the source</li>
+                                <li>the battery negative lead to the ground</li>
+                                <li>the battery positive lead to the positive rail</li>
+                            </ul>
+                        </li>
+                        <li>Optional: connect the battery connector to the 9V battery</li>
+                        <li>touch the free jumper wires ends to the battery poles or the battery connector ends</li>
+                    </ol>
+                    <h4 class="btn btn-outline-info">Observation</h4>
+                    <p>The LED blinks at a regular interval</p>
+                </div>    
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 2:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>9V battery</li>
+                        <li>555 chip</li>
+                        <li>Optional: 9V battery connector</li>
+                        <li>1000 &#8486; resistor X2</li>
+                        <li>10K &#8486; resistors X2</li>
+                        <li>Jumper cables X6</li>
+                        <li>green or yellow LED (3mm or 5 mm) X2</li>
+                        <li>4.7 uF electrolytic capacitor</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Preparation</h4>
+                    <ol>
+                        <li>on the Breadboard place: 
+                            <ul>
+                                <li>the 555 chip</li>
+                                <li>the capacitor connecting pin 1 and 2 of the 555 chip</li>
+                                <li>a jumper wire connecting pin 1 of the chip to ground</li>
+                                <li>a jumper wire connecting pin 2 to pin 6</li>
+                                <li>the 1000 &#8486; resistor connecting pin 3 of the chip to a neutral rail of the breadboard</li>
+                                <li>the longer pin of the first LED connecting the loose end of the 1000 &#8486; resistor, and the negative lead connecting the ground</li>
+                                <li>the shorter pin of the first LED in line with the loose pin of the previously placed resistor</li>
+                                <li>the 1000 &#8486; resistor connecting pin 3 of the chip to a hole in the neutral rail</li>
+                                <li>the long pin of the second LED connecting the loose end of the  previously placed resistor,</li>
+                                <li>the short pin of the LED to pin 8 or the positive rail</li>
+                                <li>a jumper wire connecting pin 4 to pin 8, or pin 4 to the positive end of the source</li>
+                                <li>a 10K &#8486; resistor connecting pin 6 to 7</li>
+                                <li>a 10K &#8486; resistor connecting pin 7 to the positive end of the source</li>
+                                <li>a jumper wire connecting pin 8 to the positive end of the source</li>
+                                <li>the battery negative lead to the ground</li>
+                                <li>the battery positive lead to the positive rail</li>
+                            </ul>
+                        </li>
+                        <li>Optional: connect the battery connector to the 9V battery</li>
+                        <li>touch the free jumper wires ends to the battery poles or the battery connector ends</li>
+                    </ol>
+                    <h4 class="btn btn-outline-info">Observation</h4>
+                    <p>The LED blinks at a regular interval</p>
+                </div>    
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 3:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>9V battery</li>
+                        <li>555 chip</li>
+                        <li>Optional: 9V battery connector</li>
+                        <li>1000 &#8486; resistor</li>
+                        <li>10K &#8486; resistors </li>
+                        <li>Jumper cables X6</li>
+                        <li>8 &#8486; 0.25W speaker</li>
+                        <li>1 uF electrolytic capacitor</li>
+                        <li>100 uF electrolytic capacitor</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Setup</h4>
+                    <ol>
+                        <li>on the Breadboard place: 
+                            <ul>
+                                <li>the 555 chip</li>
+                                <li>the 1 uF capacitor connecting pin 1 and 2 of the 555 chip</li>
+                                <li>a jumper wire connecting pin 1 of the chip to ground</li>
+                                <li>a jumper wire connecting pin 2 to pin 6</li>
+                                <li>the 100 uF capacitor with the positive lead connecting pin 3 of the chip, and the negative into a neutral hole</li>
+                                <li>The speaker with the positive pin connecting the negative end of the 100 uF capacitor, and the negative lead connecting to the ground</li>
+                                <li>the red LED with the longer pin in line with one of the pins of the resistor previously placed</li>
+                                <li>a jumper wire connecting pin 4 to pin 8, or the rail connecting the positive end of the battery</li>
+                                <li>a 10K &#8486; resistor connecting pin 6 to 7</li>
+                                <li>a 1000 &#8486; resistor connecting pin 7 to pin 8 or to the positive rail</li>
+                                <li>a jumper wire connecting pin 8 to the positive end of the source</li>
+                                <li>The negative lead of the battery to the negative rail</li>
+                                <li>The positive lead of the battery to the positive rail</li>
+                            </ul>
+                        </li>
+                        <li>Optional: connect the battery connector to the 9V battery</li>
+                        <li>touch the free jumper wires ends to the battery poles or the battery connector ends</li>
+                    </ol>
+                    <h4 class="btn btn-outline-info">Observation</h4>
+                    <p>The LED blinks at a regular interval</p>
+                </div>    
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 4:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>9V battery</li>
+                        <li>555 chip</li>
+                        <li>Optional: 9V battery connector</li>
+                        <li>1000 &#8486; resistor</li>
+                        <li>10K &#8486; resistors </li>
+                        <li>Jumper cables X6</li>
+                        <li>8 &#8486; 0.25W speaker</li>
+                        <li>1 uF electrolytic capacitor</li>
+                        <li>100 uF electrolytic capacitor</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Setup</h4>
+                    <ol>
+                        <li>on the Breadboard place: 
+                            <ul>
+                                <li>the 555 chip</li>
+                                <li>the 1 uF capacitor connecting pin 1 and 2 of the 555 chip</li>
+                                <li>a jumper wire connecting pin 1 of the chip to ground</li>
+                                <li>a jumper wire connecting pin 2 to pin 6</li>
+                                <li>the 100 uF capacitor with the positive lead connecting pin 3 of the chip, and the negative into a neutral hole</li>
+                                <li>The speaker with the positive pin connecting the negative end of the 100 uF capacitor, and the negative lead connecting to the ground</li>
+                                <li>the red LED with the longer pin in line with one of the pins of the resistor previously placed</li>
+                                <li>a jumper wire connecting pin 4 to pin 8, or the rail connecting the positive end of the battery</li>
+                                <li>a 10K &#8486; resistor connecting pin 6 to 7</li>
+                                <li>a 1000 &#8486; resistor connecting pin 7 to pin 8 or to the positive rail</li>
+                                <li>a jumper wire connecting pin 8 to the positive end of the source</li>
+                                <li>The negative lead of the battery to the negative rail</li>
+                                <li>The positive lead of the battery to the positive rail</li>
+                            </ul>
+                        </li>
+                        <li>Optional: connect the battery connector to the 9V battery</li>
+                        <li>touch the free jumper wires ends to the battery poles or the battery connector ends</li>
+                    </ol>
+                    <h4 class="btn btn-outline-info">Observation</h4>
+                    <p>The LED blinks at a regular interval</p>
+                </div>    
+            </div><!-- col -->
+        </div><!-- row -->
+    </div>    
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>

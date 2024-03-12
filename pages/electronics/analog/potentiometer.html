@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Electronics Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../../index.html">Science tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../electronics/analog-main.html">analog</a>
+                            <a class="dropdown-item text-capitalize" href="../digital-main.html">digital</a>
+                            <a class="dropdown-item text-capitalize" href="../arduino-main.html">arduino</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../physics/mechanics-main.html">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-uppercase my-4">voltage dividers</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 1:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>1 K&ohm; potentiometer</li>
+                        <li>Digital multimeter</li>
+                    </ul>
+
+                    <h4>objective</h4>
+
+                    <p>measure the resistance of the potentiometer between the three pins</p>
+
+                    <h4 class="btn btn-outline-info">Preparation</h4>
+
+                    <p>drawing here...</p>
+
+                    <h4 class="btn btn-outline-info">Observation</h4>
+
+                    <p>measured resistance values are:</p>
+                    <ul>
+                      <li>between middle and left pin: 1.081 &ohm;</li>
+                      <li>between middle and right pin: 5 &ohm;</li>
+                      <li>between left and right pin: 1.077 &ohm;</li>
+                    </ul>
+
+                    <p>NOTE: when measuring the resistance between the left and right pins, if turning the knob all the way to the right or to the left, the result is the same.</p>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 2:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>Breadboard</li>
+                        <li>9V battery</li>
+                        <li>9V battery connector</li>
+                        <li>470 &#8486; resistor</li>
+                        <li>1 K&ohm; potentiometer</li>
+                        <li>red LED (3 or 5 mm)</li>
+                        <li>Digital multimeter</li>
+                    </ul>
+                    <h4 class="btn btn-outline-info">Preparation</h4>
+
+                    <p>drawing here...</p>
+
+                    <h4 class="btn btn-outline-info">Observation</h4>
+
+                    <p>with the potentiometer set to its maximum resistance, measured values are: </p>
+                    <ul>
+                      <li>the value of the 470 &ohm; resistor is actually 467.2 &ohm;</li>
+                      <li>voltage across the battery: 8.72 V;</li>
+                      <li>voltage across the middle and right potentiometer: 4.7 V;</li>
+                      <li>voltage across the 470 &ohm; resistor: 2.03 V</li>
+                      <li>voltage across the LED: 1.85 V</li>
+                      <li>current through the circuit: 4.3 mA</li>
+                    </ul>
+
+                    <p>with the potentiometer set to 760 &ohm;, measured values are: </p>
+                    <ul>
+                      <li>voltage across the middle and right potentiometer: 4.13 V;</li>
+                      <li>voltage across the 470 &ohm; resistor: 2.57 V</li>
+                      <li>voltage across the LED: 1.87 V</li>
+                      <li>current through the circuit: 5.46 mA</li>
+                    </ul>
+
+                    <p>with the potentiometer set to 507 &ohm;, measured values are: </p>
+                    <ul>
+                      <li>voltage across the middle and right potentiometer: 3.41 V;</li>
+                      <li>voltage across the 470 &ohm; resistor: 3.22 V</li>
+                      <li>voltage across the LED: 1.88 V</li>
+                      <li>current through the circuit: 6.85 mA</li>
+                    </ul>
+
+                    <p>with the potentiometer set to 306 &ohm;, measured values are: </p>
+                    <ul>
+                      <li>voltage across the middle and right potentiometer: 2.57 V;</li>
+                      <li>voltage across the 470 &ohm; resistor: 3.98 V</li>
+                      <li>voltage across the LED: 1.89 V</li>
+                      <li>current through the circuit: 8.6 mA</li>
+                    </ul>
+
+                    <p>with the potentiometer set to its minimum resistance (5 &ohm;), measured values are: </p>
+                    <ul>
+                      <li>voltage across the middle and right potentiometer: 0.055 V;</li>
+                      <li>voltage across the 470 &ohm; resistor: 6.2 V</li>
+                      <li>voltage across the LED: 1.91 V</li>
+                      <li>current through the circuit: 13.73 mA</li>
+                    </ul>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div>
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>

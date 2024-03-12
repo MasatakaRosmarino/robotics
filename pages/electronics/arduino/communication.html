@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Electronics Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../../index.html">Science tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../electronics/analog-main.html">analog</a>
+                            <a class="dropdown-item text-capitalize" href="../digital-main.html">digital</a>
+                            <a class="dropdown-item text-capitalize" href="../arduino-main.html">arduino</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../physics/mechanics-main.html">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-uppercase">communication</h3>   
+                
+                <h4 class="text-uppercase">serial communication (uart)</h4>
+
+                <p>ports are on pins:</p>
+
+                <ul>
+                    <li>0, RX</li>
+                    <li>1, TX</li>
+                </ul>
+
+                <p>additional UART ports can be added via software.</p>
+                <p>USB communication is not possible at the same time UART communication is in progress.</p>
+
+                <h4 class="text-uppercase">i<sup>2</sup>c (twi) communication</h4>
+
+                <p>Ports are on pins:</p>
+
+                <ul>
+                    <li>scl and A5</li>
+                    <li>sda and A4</li>
+                </ul>
+
+                <p>up to 128 different devices in series can be connected to this ports (accelerometer + T sensor etc.).<br>
+                each device is the slave, and must have a unique address to communicate with Arduino, the master.</p>
+                <p>SCL port acts as the clock.</p>
+                <p>SDA port acts as the data bus.</p>
+
+                <h4 class="text-uppercase">spi communication</h4>
+
+                <p>it is a 4-wire communication</p>
+                <ol>
+                    <li>MOSI (Master Out Slave In)</li>
+                    <li>MISO (Master In Slave Out)</li>
+                    <li>SCK, clock</li>
+                    <li>SS, Slave selector</li>
+                </ol>
+
+                <p>connection to multiple devices is possible, but when one SS is set to HIGH, all others have to be set to LOW.</p>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div>    
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>

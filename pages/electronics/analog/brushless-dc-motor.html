@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Electronics Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../../index.html">Science tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="../electronics-main.html">Electronics</a>
+                </li> -->
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../electronics/analog-main.html">analog</a>
+                            <a class="dropdown-item text-capitalize" href="../digital-main.html">digital</a>
+                            <a class="dropdown-item text-capitalize" href="../arduino-main.html">arduino</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../physics/mechanics-main.html">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-uppercase my-4">DC brushless toy motors</h1>
+
+                <!-- experiment card -->
+                <div class="border p-3 mb-5">
+                    <h3 class="text-uppercase"><b>Experiment 1:</b></h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>1.5V AAA battery</li>
+                        <li>1.5V AA battery</li>
+                        <li>3V CR2016 button cell battery</li>
+                        <li>adhesive tape</li>
+                        <li>Jumper cables X4</li>
+                        <li>DC brushless toy motor</li>
+                        <li>0.25W diode X1</li>
+                        <li>1 &ohm; 2W resistor X4</li>
+                        <li>Digital multimeter</li>
+                    </ul>
+
+                    <p>NOTE: toy motor must have an operationg voltage of at least 1.5V</p>
+
+                    <h4>model in use:</h4>
+                    <p>motor R037</p>
+                    <ul>
+                        <li>voltaje de operación: 1.5 V a 6 V</li>
+                        <li>corriente DC : 350mA</li>
+                        <li>torque max.: 15g/cm</li>
+                        <li>velocidad max.: 12000rpm</li>
+                        <li>peso:16,5 g</li>
+                    </ul>
+
+                    <h5 class="btn btn-outline-info">Setup</h5>
+                    <p>drawing here...</p>
+
+                    <h5 class="btn btn-outline-info">Observation</h5>
+                    <ol>
+                        <li>AA battery voltage is 1.538V</li>
+                        <li>connecting 1 AA battery, the DC motor won't activate</li>
+                    </ol>
+
+                    <p>with 2 AA 1.2 V rechargeable batteries in series</p>
+                    <ul>
+                        <li>voltage across the batteries is 2.45 V</li>
+                        <li>voltage across the motor is around 1.2 and up to 1.4 V</li>
+                        <li>current through the circuit is between 0.44 and 0.46 A</li>
+                    </ul>
+
+                    <p>with 4 AA rechargeable batteries having 1.2V</p>
+
+                    <ul>
+                        <li>measured voltage is 5.024V</li>
+                        <li>current goes from 0.8 to up to 1A</li>
+                        <li>smoke detected</li>
+                    </ul>
+
+                    <p>with 1 X 10 &ohm; resistor in series with the motor</p>
+
+                    <ul>
+                        <li>motor is not spinning</li>
+                        <li>4 AA battery pack voltage is around 4.89 V</li>
+                        <li>voltage across the resistor is around 3.7 V</li>
+                        <li>voltage across the DC motor is less than 1 V, around 0.29 V</li>
+                        <li>current through the circuit is around 0.38 A</li>
+                    </ul>
+
+                    <p>NOTE: according to the motor datasheet, the operating voltage should be around 0.35 A.<br/>
+                    putting a 10 &ohm; resistor in series should give this result, however, the resistor seems to be taking most of the voltage required to spin the motor.
+                    </p>
+
+                    <p>with 1 X 10 &ohm; resistor in parallel with the motor</p>
+
+                    <ul>
+                        <li>motor spinning fast and loudly</li>
+                        <li>4 AA battery pack voltage is around 4.89 V</li>
+                        <li>voltage across the motor is around 3.5 V</li>
+                        <li>current through the circuit goes up to 0.8 A</li>
+                    </ul>
+
+                    <p>NOTE: adding up to 3 resistors in parallel with the motor won't change the amount of current through the latter, it stays between 0.7 and 0.8 A.</p>
+
+                    <p>with 4 X 1 &ohm; resistors in series with the motor</p>
+
+                    <ul>
+                        <li>4 AA battery pack voltage is around 4.89 V</li>
+                        <li>voltage across the 4 resistors is around 2.7 V</li>
+                        <li>voltage across the DC motor is around 1.3 V</li>
+                        <li>current through the circuit is around 0.5 A</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+        
+    </div>    
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>

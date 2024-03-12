@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Electronics Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../../index.html">Science tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../electronics/analog-main.html">analog</a>
+                            <a class="dropdown-item text-capitalize" href="../digital-main.html">digital</a>
+                            <a class="dropdown-item text-capitalize" href="../arduino-main.html">arduino</a>                            <a class="dropdown-item text-capitalize" href="arduino-main.html">arduino</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../physics/mechanics-main.html">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <h1 class="text-center text-uppercase my-4">batteries</h1>
+
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-uppercase">battery capacity and current rating chart:</h3>
+
+                <h4>batteries capacities are distinguished by mAh</h4>
+                <ul>
+                    <li>aaa: 1,000 mAh</li>
+                    <li>aa: 2400 mAh</li>
+                    <li>c: 6000 mAh</li>
+                    <li>d: 13000 mAh</li>
+                    <li>n: 650 mAh</li>
+                    <li>9V (pp3): 500 mAh</li>
+                </ul>
+
+                <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Capacity (mAh)</th>
+                                <th>Current rating (mA)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-uppercase">aaa</th>
+                                <td>1,000</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th class="text-uppercase">aa</th>
+                                <td>2,400</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <th class="text-uppercase">c</th>
+                                <td>6,000</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <th class="text-uppercase">d</th>
+                                <td>13000</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <th class="text-uppercase">n</th>
+                                <td>650</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th class="text-uppercase">9v (pp3)</th>
+                                <td>500</td>
+                                <td>15</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <p class="text-capitalize">the lifespan can be calculated with the formula:</p>
+
+                <table class="text-capitalize math-formula">
+                    <tr>
+                        <td class="border-bottom border-dark">capacity</td>
+                    </tr>
+                    <tr>
+                        <td>current rating</td>
+                    </tr>
+                </table>
+
+                <p>Example:</p>
+
+                <table class="text-capitalize math-formula">
+                    <tr>
+                        <td class="border-bottom border-dark">1000</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>=</td>
+                    </tr>
+                    <tr>
+                        <td>100 h</td>
+                    </tr>
+                </table>
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <p class="text-capitalize">NOTE: if batteries have to output more current than what they are designed for, the efficiency may drop.</p>
+
+                <p>Example:</p>
+
+                <table class="text-capitalize math-formula">
+                    <tr>
+                        <td class="border-bottom border-dark">1000</td>
+                    </tr>
+                    <tr>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>=</td>
+                    </tr>
+                    <tr>
+                        <td>0.1 h (6 min)</td>
+                    </tr>
+                </table>
+
+                <p>this will most likely damage the battery due to its physical and chemical structure that limits the increase in current output.      </p>
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <h3>batteries in series and in parallel</h3>
+
+                <h4>batteries in series</h4>
+
+                <ul>
+                    <li>they increase their output voltage</li>
+                    <li>the current released by them is the same as of a single battery</li>
+                </ul>
+
+                <h4>batteries in parallel</h4>
+
+                <ul>
+                    <li>they increase their output current</li>
+                    <li>the voltage released by them is the same as of a single battery</li>
+                </ul>
+
+                <h4>batteries in series and parallel</h4>
+
+                <p>they can increase both output voltage and current.</p>
+
+                <h4>IMPORTANT:</h4>
+                <ul>
+                    <li>the type of the battery (AA, AAA, C, 9V etc.) must be the same</li>
+                    <li>they need the same amount of charge as possible</li>
+                </ul>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div>
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>

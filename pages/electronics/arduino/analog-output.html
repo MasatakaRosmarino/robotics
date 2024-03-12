@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Electronics Notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../../index.html">Science tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../electronics/analog-main.html">analog</a>
+                            <a class="dropdown-item text-capitalize" href="../digital-main.html">digital</a>
+                            <a class="dropdown-item text-capitalize" href="../arduino-main.html">arduino</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" href="../../physics/mechanics-main.html">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <h1 class="text-center text-uppercase my-4">analog input experiment (To be finished)</h1>
+
+        <div class="row">
+            <div class="col-12">
+                <h4>setup</h4>
+
+                <ul>
+                    <li>pc</li>
+                    <li>arduino uno board</li>
+                    <li>arduino-PC USB cable</li>
+                    <li>220 ohm 0.25W resistor X1</li>
+                    <li>3mm red LED</li>
+                    <li>jumper wires X 3</li>
+                </ul>
+
+                <h4>source code</h4>
+
+                <pre>
+                    <font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">analogOutPin</font> <font color="#434f54">=</font> <font color="#000000">3</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;A0; --&gt; not working</font>
+                    
+                    <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
+                    <font color="#000000">}</font>
+                    
+                    <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                     &nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;=</font><font color="#000000">255</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font><font color="#000000">{</font>
+                     &nbsp;&nbsp;&nbsp;<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">analogOutPin</font><font color="#434f54">,</font> <font color="#000000">i</font><font color="#000000">)</font><font color="#000000">;</font>
+                     &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
+                     &nbsp;<font color="#000000">}</font>
+                     &nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">255</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&gt;=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">--</font><font color="#000000">)</font><font color="#000000">{</font>
+                     &nbsp;&nbsp;&nbsp;<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">analogOutPin</font><font color="#434f54">,</font> <font color="#000000">i</font><font color="#000000">)</font><font color="#000000">;</font>
+                     &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
+                     &nbsp;<font color="#000000">}</font>
+                    <font color="#000000">}</font>
+                </pre>
+
+                <p>NOTE: 
+                </p>
+
+                <ul>
+                    <li>when using the analogWrite() function there is no need to call the pinMode() function<br/>
+                        Calling directly analogWrite(pinNumber, value) is enough</li>
+                    <li>the analog output can be done by the PWM pins alone (pins marked with ~)</li>
+                </ul>
+            </div>
+        </div>
+             
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-capitalize">setup</h4>
+                
+                <p>drawing of arduino and wired components here</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-capitalize">Observation:</h4>
+                
+                <ul>
+                    <li>the analog output signal must come from a PWM pin (marked with ~)</li>
+                    <li>the analog outputut signal must not come from analog pins (A0 to a5)</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5">
+                    <h1>to do experiment</h1>
+                    <h3>experiment with brushless DC motor</h3>
+                    <h4>tools</h4>
+
+                    <ul>
+                        <li>Arduino Uno board</li>
+                        <li>brushless DC motor 1.5-6V</li>
+                        <li>0.25 W diode X1</li>
+                        <li>jumper wires X4</li>
+                    </ul>
+
+                    <h4>setup</h4>
+
+                    <p>drawing of arduino and electronic components here...</p>
+                </div>    
+            </div><!-- col -->
+        </div><!-- row -->
+    </div>    
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>
