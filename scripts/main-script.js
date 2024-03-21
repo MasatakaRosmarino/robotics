@@ -5,7 +5,7 @@ var indexOfRootFolder = currentRootPathArray.indexOf("robotics");
 
 var rootFolderArray = currentRootPathArray.slice(0, (indexOfRootFolder + 1));
 
-/**This is the url leading to the root folder: sciencetutorial */
+/**This is the url leading to the root folder: robotics */
 var rootFolderPath = rootFolderArray.join("/");
 
 /**This is the name of the page in the current URL */
@@ -14,17 +14,32 @@ var currentPage = currentRootPathArray.pop();
 /**Displays the current folder in the URL named electronics or physics */
 var currentUrlFolder = currentRootPathArray.join("/");
 
+/** get image tags and set the exact path extending from the rootFolderPath variable*/
+var imagesList = document.getElementsByTagName("img");
+//alert("image tags: " + imagesList.length);
+for(var i = 0; i < imagesList.length; i++){
+    var srcPath = imagesList[i].getAttribute("src");
+    srcPath = rootFolderPath + "/asset/images/" + srcPath;
+    imagesList[i].setAttribute("src", srcPath);
+}
+/** */
+
+/** get anchor tags and set the exact path extending from the rootFolderPath variable*/
+var analogAnchor = document.getElementById("analog");
+var digitalAnchor = document.getElementById("digital");
+var arduinoAnchor = document.getElementById("arduino");
+var mechanicsAnchor = document.getElementById("mechanics");
+
+analogAnchor.href = rootFolderPath + "/pages/electronics/analog/analog-main.html";
+digitalAnchor.href = rootFolderPath + "/pages/electronics/digital/digital-main.html";
+arduinoAnchor.href = rootFolderPath + "/pages/electronics/arduino/arduino-main.html";
+
 var dropdownMenu = document.getElementById("content-menu");
 
 var menuList = [];
 
 var menuItemsList = [];
 
-var digitalUrlFolder = currentUrlFolder + "/";
-var currentUrlFolderFolder = currentUrlFolder + "/";
-var mechanicsUrlFolder = currentUrlFolder + "/";
-
-//if(currentPage == "analog-main.html"){
 if(currentUrlFolder.includes("analog")){
     menuList.push(createMenuElement(currentUrlFolder + "/tools.html", "dropdown-item", "Tools of the trade"));
     menuList.push(createMenuElement(currentUrlFolder + "/light-bulb.html", "dropdown-item", "Light bulbs"));
