@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <title>Gears and gear trains</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" id="robotics" href="">Robotics</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Electronics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" id="analog" href="">analog</a>
+                            <a class="dropdown-item text-capitalize" id="digital" href="">digital</a>
+                            <a class="dropdown-item text-capitalize" id="arduino" href="">arduino</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Physics
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-capitalize" id="mechanics" href="">mechanics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-uppercase">gears and gear trains</h1>
+
+                <section class="mb-5">
+                    <h2 class="text-uppercase">Principle</h2>
+
+                    <p>Gears follow the same principle that class 1 levers follow, they rotate around an axle (the fulchrum), and one side exerts a downwards or upwards force, 
+                        while the opposite side exerts the same force in the opposite direction.</p>
+
+                    <p>They can be distinguished by their radius or number of teeth.</p>
+
+                    <h3>Simple gears</h3>
+
+                    <div class="clearfix">
+                        <picture>
+                            <img src="gear_20T.png" alt="gear" class="img-thumbnail float-left mr-3 mb-3">
+                        </picture>
+
+                        <p>Simple gears are defined simply by their number of teeth and radius</p>
+                    </div>
+
+                    <h3>Compound gears</h3>
+                    
+                    <div class="clearfix">
+                        <picture>
+                            <img src="compound_gear_20-10.png" alt="gear" class="img-thumbnail float-left mr-3 mb-3">
+                        </picture>
+
+                        <p>Compound gears are defined by their number of inner and outer teeth and radii</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-uppercase">gear trains</h2>
+                    <div class="clearfix">
+                        <picture>
+                            <img src="gear_train.png" alt="gear train" class="img-thumbnail float-left mr-3 mb-3">
+                        </picture>
+
+                        <p>Gears can be coupled together to form gear trains; this arrangement enables to adjust the torque and rotation speed to create mechanical advantage.</p>
+
+                        <p>there is always a drive gear that gives the input force, for example the gear attached to a DC motor axle, and a driven gear, that exerts the output force.</p>
+
+                        <p>Smaller gears are normally called pinions, whereas larger gears are called gears.</p>
+
+                        <p>The key factor is the <span class="text-italic">gear ratio</span>, that is calculated with the formula: <span class="text-uppercase">driven gear</span> : <span class="text-uppercase">drive gear</span>.</p>
+
+                        <p>For example, if the drive gear has 10 teeth, and the driven gear has 20 teeth, the gear ratio is: 20 : 10 = 0.5. This means that for every turn of the driven gear, the drive gear turns 2 times as much.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>   
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js"></script>
+</body>
+</html>

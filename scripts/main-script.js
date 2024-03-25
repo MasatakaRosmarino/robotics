@@ -6,17 +6,20 @@ var indexOfRootFolder = currentRootPathArray.indexOf("robotics");
 var rootFolderArray = currentRootPathArray.slice(0, (indexOfRootFolder + 1));
 
 /**This is the url leading to the root folder: robotics */
+//rootFolderArray.pop();
 var rootFolderPath = rootFolderArray.join("/");
 
-/**This is the name of the page in the current URL */
+/**This is the name of the page in the current URL
+ * NOTE: this variable is necessary if you want to remove the html page from the variable currentUrlFolder
+ */
 var currentPage = currentRootPathArray.pop();
 
-/**Displays the current folder in the URL named electronics or physics */
+/**Displays the current folder in the URL named electronics or physics without the current page, e.g. analog-main.html, physics-main.html etc. */
 var currentUrlFolder = currentRootPathArray.join("/");
 
 /** get image tags and set the exact path extending from the rootFolderPath variable*/
 var imagesList = document.getElementsByTagName("img");
-//alert("image tags: " + imagesList.length);
+
 for(var i = 0; i < imagesList.length; i++){
     var srcPath = imagesList[i].getAttribute("src");
     srcPath = rootFolderPath + "/asset/images/" + srcPath;
@@ -25,20 +28,25 @@ for(var i = 0; i < imagesList.length; i++){
 /** */
 
 /** get anchor tags and set the exact path extending from the rootFolderPath variable*/
+var indexAnchor = document.getElementById("robotics");
 var analogAnchor = document.getElementById("analog");
 var digitalAnchor = document.getElementById("digital");
 var arduinoAnchor = document.getElementById("arduino");
 var mechanicsAnchor = document.getElementById("mechanics");
 
+indexAnchor.href = rootFolderPath + "/index.html";
 analogAnchor.href = rootFolderPath + "/pages/electronics/analog/analog-main.html";
 digitalAnchor.href = rootFolderPath + "/pages/electronics/digital/digital-main.html";
 arduinoAnchor.href = rootFolderPath + "/pages/electronics/arduino/arduino-main.html";
+mechanicsAnchor.href = rootFolderPath + "/pages/physics/mechanics/mechanics-main.html";
 
 var dropdownMenu = document.getElementById("content-menu");
 
 var menuList = [];
 
 var menuItemsList = [];
+
+
 
 if(currentUrlFolder.includes("analog")){
     menuList.push(createMenuElement(currentUrlFolder + "/tools.html", "dropdown-item", "Tools of the trade"));
@@ -88,7 +96,7 @@ if(currentUrlFolder.includes("arduino")){
 if(currentUrlFolder.includes("mechanics")){
     menuList.push(createMenuElement(currentUrlFolder + "/forces.html", "dropdown-item", "Forces and vectors"));
     menuList.push(createMenuElement(currentUrlFolder + "/law-of-sines-and-cosines.html", "dropdown-item", "Law of sines and cosines"));
-
+    menuList.push(createMenuElement(currentUrlFolder + "/gears.html", "dropdown-item", "Gears and geartrains"));
 }
 
 for(var i=0; i< menuList.length; i++){
