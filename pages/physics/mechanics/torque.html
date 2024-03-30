@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" id="bootstrap" href="">
     <link rel="stylesheet" id="main-style" href="">
-    <title>Gears and gear trains</title>
+    <title>Torque</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,66 +56,66 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center text-uppercase">gears and gear trains</h1>
+                <h1 class="text-uppercase">torque</h1>
 
                 <section class="mb-5">
-                    <h2 class="text-uppercase">Principle</h2>
+                    <h2 class="text-uppercase">Definition</h2>
+    
+                    <p>Torque is referred to as the force applied at a certain distance from the fulchrum.</p>
 
-                    <p>Gears follow the same principle that class 1 levers follow, they rotate around an axle (the fulchrum), and one side exerts a downwards or upwards force, 
-                        while the opposite side exerts the same force in the opposite direction.</p>
+                    <picture>
+                        <img src="torque_drawing.jpg" alt="torque" class="img">
+                    </picture>
 
-                    <p>They can be distinguished by their radius or number of teeth.</p>
+                    <p>The vector representation is the following:</p>
 
-                    <h3>Simple gears</h3>
+                    <picture>
+                        <img src="torque_vector_0_degree.jpg" alt="torque" class="img">
+                    </picture>
 
-                    <div class="clearfix">
-                        <picture>
-                            <img src="gear_20T.png" alt="gear" class="img-thumbnail float-left mr-3 mb-3">
-                        </picture>
+                    <p>Given a force <span class="font-italic text-uppercase">f</span> applied at a distance <span class="font-italic">d</span>, the mathematical relationship is the following:</p>
 
-                        <p>Simple gears are defined simply by their number of teeth and radius</p>
-                    </div>
+                    <h4 class="font-italic math-formula">&tau; = F &middot; d</h4>
 
-                    <h3>Compound gears</h3>
+                    <p>If the distance is at a certain angle, the vector representation is the following:</p>
+
+                    <picture>
+                        <img src="torque_vector_theta_degree.jpg" alt="torque" class="img">
+                    </picture>
                     
-                    <div class="clearfix">
-                        <picture>
-                            <img src="compound_gear_20-10.jpg" alt="gear" class="img-thumbnail float-left mr-3 mb-3">
-                        </picture>
+                    <p>The mathematical relationship is the following:</p>
 
-                        <p>Compound gears are defined by their number of inner and outer teeth and radii</p>
-                    </div>
+                    <p>With respect to the angle &theta;:</p>
+
+                    <h4 class="mb-3 font-italic math-formula">&tau; = F &middot; d &middot; cos &theta;</h4>
+
+                    <p>With respect to the angle &gamma;:</p>
+
+                    <h4 class="mb-2 font-italic math-formula">&tau; = F &middot; d &middot; sin &gamma;</h4>
+
+                    <p>The common unit of measure is N &middot; m or Kg &middot; cm.</p>
+
+                    <p><span class="text-uppercase">note:</span> although it is the product of a force and distance, it does not represent the energy in a system.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-uppercase">gear trains</h2>
-                    <div class="clearfix">
-                        <picture>
-                            <img src="gear_train.png" alt="gear train" class="img-thumbnail float-left mr-3 mb-3">
-                        </picture>
+                
 
-                        <p>Gears can be coupled together to form gear trains; this arrangement enables to adjust the torque and rotation speed to create mechanical advantage.</p>
+                <section class="mb-5">
+                    <h5>Example:</h5>
 
-                        <p>there is always a drive gear that gives the input force, for example the gear attached to a DC motor axle, and a driven gear, that exerts the output force.</p>
-
-                        <p>Smaller gears are normally called pinions, whereas larger gears are called gears.</p>
-
-                        <p>The key factor is the <span class="font-italic">gear ratio</span>, which is calculated with the formula: <span class="text-uppercase">driven gear</span> : <span class="text-uppercase">drive gear</span>.</p>
-
-                        <p>For example, if the drive gear has 10 teeth, and the driven gear has 20 teeth, the gear ratio is:<br/> 20 : 10 = 2<br/>.</p> 
-                            
-                        <p>This means that: 
-                            <ul>
-                                <li>for every turn of the driven gear, the drive gear turns 2 times as much.</li>
-                                <li>The mechanical advantage is 2 times the input force from the drive gear.</li>
-                            </ul>
-                        </p>
-                    </div>
+                    
+                    
                 </section>
             </div>
         </div>
-    </div>   
 
+        <div class="row">
+            <div class="col-12">
+                
+            </div>
+        </div>
+    </div>   
+    
     <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
     <script src="../../../scripts/main-script.js" async></script>

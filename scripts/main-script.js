@@ -105,7 +105,8 @@ if(currentUrlFolder.includes("arduino")){
 if(currentUrlFolder.includes("mechanics")){
     menuList.push(createMenuElement(currentUrlFolder + "/forces.html", "dropdown-item", "Forces and vectors"));
     menuList.push(createMenuElement(currentUrlFolder + "/law-of-sines-and-cosines.html", "dropdown-item", "Law of sines and cosines"));
-    menuList.push(createMenuElement(currentUrlFolder + "/gears.html", "dropdown-item", "Gears and geartrains"));
+    menuList.push(createMenuElement(currentUrlFolder + "/torque.html", "dropdown-item", "Torque"));
+    menuList.push(createMenuElement(currentUrlFolder + "/gears.html", "dropdown-item", "Gears and gear trains"));
 }
 
 for(var i=0; i< menuList.length; i++){
