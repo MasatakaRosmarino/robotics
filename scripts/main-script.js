@@ -42,11 +42,11 @@ mechanicsAnchor.href = rootFolderPath + "/pages/physics/mechanics/mechanics-main
 
 
 /*improving bootstrap import with the use of the async attribute in the javascript tag*/
-var bootstrapLink = document.getElementById("bootstrap");
+/*var bootstrapLink = document.getElementById("bootstrap");
 var mainStyleLink = document.getElementById("main-style");
 
 bootstrapLink.href = rootFolderPath + "/lib/bootstrap-4.6/css/bootstrap.css";
-mainStyleLink.href = rootFolderPath + "/styles/main.css";
+mainStyleLink.href = rootFolderPath + "/styles/main.css";*/
 /** */
 
 var dropdownMenu = document.getElementById("content-menu");
