@@ -10,41 +10,33 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" id="robotics" href="">Robotics</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                
-                <li>
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Electronics
-                        </a>
-                      
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item text-capitalize" id="analog" href="">analog</a>
-                            <a class="dropdown-item text-capitalize" id="digital" href="">digital</a>
-                            <a class="dropdown-item text-capitalize" id="arduino" href="">arduino</a>
-                        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" id="robotics" href="">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Electronics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="analog" href="">Analog</a>
+                        <a class="dropdown-item" id="digital" href="">Digital</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="arduino" href="">Arduino</a>
                     </div>
                 </li>
-                <li>
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Physics
-                        </a>
-                      
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item text-capitalize" id="mechanics" href="">mechanics</a>
-                        </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Physics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="mechanics" href="#">Mechanics</a>
                     </div>
                 </li>
-            </ul>
+          </ul>
         </div>
     </nav>
-
     <!-- DROPDOWN MENU -->
     <div class="dropdown">
         <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

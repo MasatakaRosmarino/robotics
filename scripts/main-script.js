@@ -40,15 +40,6 @@ digitalAnchor.href = rootFolderPath + "/pages/electronics/digital/digital-main.h
 arduinoAnchor.href = rootFolderPath + "/pages/electronics/arduino/arduino-main.html";
 mechanicsAnchor.href = rootFolderPath + "/pages/physics/mechanics/mechanics-main.html";
 
-
-/*improving bootstrap import with the use of the async attribute in the javascript tag*/
-/*var bootstrapLink = document.getElementById("bootstrap");
-var mainStyleLink = document.getElementById("main-style");
-
-bootstrapLink.href = rootFolderPath + "/lib/bootstrap-4.6/css/bootstrap.css";
-mainStyleLink.href = rootFolderPath + "/styles/main.css";*/
-/** */
-
 var dropdownMenu = document.getElementById("content-menu");
 
 var menuList = [];
