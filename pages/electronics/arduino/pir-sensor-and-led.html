@@ -32,6 +32,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" id="mechanics" href="#">Mechanics</a>
+                        <a class="dropdown-item" id="material" href="#">Materials densities</a>
                     </div>
                 </li>
           </ul>
@@ -65,42 +66,49 @@
                     <li>jumper wires X 4</li>
                 </ul>
 
-                <h4>source code</h4>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>sketch</h5>
+                    </div>
+                    
+                    <div class="card-body">
+                        <pre>
+                            <font color="#00979c">int</font> <font color="#000000">ledPin</font> <font color="#434f54">=</font> <font color="#000000">13</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; choose the pin for the LED</font>
+                            <font color="#00979c">int</font> <font color="#000000">inputPin</font> <font color="#434f54">=</font> <font color="#000000">8</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; choose the input pin (for PIR sensor)</font>
+                            <font color="#00979c">int</font> <font color="#000000">pirState</font> <font color="#434f54">=</font> <font color="#00979c">LOW</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; flag variable assuming no motion detected</font>
+                            <font color="#00979c">int</font> <font color="#000000">val</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; variable for reading the pin status</font>
+                             
+                            <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                             &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">ledPin</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; declare LED as output</font>
+                             &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">inputPin</font><font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; declare sensor as input</font>
+                             
+                             &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
+                            <font color="#000000">}</font>
+                             
+                            <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">{</font>
+                             &nbsp;<font color="#000000">val</font> <font color="#434f54">=</font> <font color="#d35400">digitalRead</font><font color="#000000">(</font><font color="#000000">inputPin</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47; read input value from PIR sensor</font>
+                             &nbsp;
+                             &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">val</font> <font color="#434f54">==</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">ledPin</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47; turn LED ON if the PIR sensor detects motion</font>
+                             &nbsp;
+                             &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">pirState</font> <font color="#434f54">==</font> <font color="#00979c">LOW</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; if the flag variable is LOW, change pirState to HIGH</font>
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Motion detected!&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">pirState</font> <font color="#434f54">=</font> <font color="#00979c">HIGH</font><font color="#000000">;</font>
+                             &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+                             &nbsp;<font color="#000000">}</font> 
+                             &nbsp;<font color="#5e6d03">else</font><font color="#000000">{</font>
+                             &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">ledPin</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; turn LED OFF</font>
+                             &nbsp;
+                             &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pirState</font> <font color="#434f54">==</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; if the condition is not met, pirState stays LOW and won&#39;t work</font>
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Motion ended!&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">pirState</font> <font color="#434f54">=</font> <font color="#00979c">LOW</font><font color="#000000">;</font>
+                             &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+                             &nbsp;<font color="#000000">}</font>
+                            <font color="#000000">}</font>
+                        </pre>
+                    </div>
+                </div>
 
-                <pre>
-                    <font color="#00979c">int</font> <font color="#000000">ledPin</font> <font color="#434f54">=</font> <font color="#000000">13</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; choose the pin for the LED</font>
-                    <font color="#00979c">int</font> <font color="#000000">inputPin</font> <font color="#434f54">=</font> <font color="#000000">8</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; choose the input pin (for PIR sensor)</font>
-                    <font color="#00979c">int</font> <font color="#000000">pirState</font> <font color="#434f54">=</font> <font color="#00979c">LOW</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; flag variable assuming no motion detected</font>
-                    <font color="#00979c">int</font> <font color="#000000">val</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; variable for reading the pin status</font>
-                     
-                    <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                     &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">ledPin</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; declare LED as output</font>
-                     &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">inputPin</font><font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; declare sensor as input</font>
-                     
-                     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
-                    <font color="#000000">}</font>
-                     
-                    <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">{</font>
-                     &nbsp;<font color="#000000">val</font> <font color="#434f54">=</font> <font color="#d35400">digitalRead</font><font color="#000000">(</font><font color="#000000">inputPin</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47; read input value from PIR sensor</font>
-                     &nbsp;
-                     &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">val</font> <font color="#434f54">==</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">ledPin</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47; turn LED ON if the PIR sensor detects motion</font>
-                     &nbsp;
-                     &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">pirState</font> <font color="#434f54">==</font> <font color="#00979c">LOW</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; if the flag variable is LOW, change pirState to HIGH</font>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Motion detected!&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">pirState</font> <font color="#434f54">=</font> <font color="#00979c">HIGH</font><font color="#000000">;</font>
-                     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-                     &nbsp;<font color="#000000">}</font> 
-                     &nbsp;<font color="#5e6d03">else</font><font color="#000000">{</font>
-                     &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">ledPin</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; turn LED OFF</font>
-                     &nbsp;
-                     &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pirState</font> <font color="#434f54">==</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; if the condition is not met, pirState stays LOW and won&#39;t work</font>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Motion ended!&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">pirState</font> <font color="#434f54">=</font> <font color="#00979c">LOW</font><font color="#000000">;</font>
-                     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-                     &nbsp;<font color="#000000">}</font>
-                    <font color="#000000">}</font>
-                </pre>
                 
                 <h4 class="text-capitalize">setup</h4>
                 

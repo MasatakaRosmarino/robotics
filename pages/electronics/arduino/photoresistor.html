@@ -32,6 +32,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" id="mechanics" href="#">Mechanics</a>
+                        <a class="dropdown-item" id="material" href="#">Materials densities</a>
                     </div>
                 </li>
           </ul>
@@ -69,21 +70,28 @@
                     <li>jumper wires X 3</li>
                 </ul>
 
-                <h4>source code</h4>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>sketch</h5>
+                    </div>
 
-                <pre>
-                    <font color="#00979c">int</font> <font color="#000000">analogIn</font> <font color="#434f54">=</font> <font color="#000000">A0</font><font color="#000000">;</font>
-                    
-                    <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
-                    <font color="#000000">}</font>
-                    
-                    <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">analogIn</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
-                     &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
-                    <font color="#000000">}</font>
-                    
-                </pre>
+                    <div class="card-body">
+                        <pre>
+                            <font color="#00979c">int</font> <font color="#000000">analogIn</font> <font color="#434f54">=</font> <font color="#000000">A0</font><font color="#000000">;</font>
+                            
+                            <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                             &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
+                            <font color="#000000">}</font>
+                            
+                            <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                             &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">analogIn</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
+                             &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+                            <font color="#000000">}</font>
+                            
+                        </pre>
+                    </div>
+                </div>
+
             </div>
         </div>
              
@@ -109,7 +117,7 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="border p-3 mb-5">
+                <div class="border p-3 mb-5 shadow-lg">
                 </div>    
             </div><!-- col -->
         </div><!-- row -->

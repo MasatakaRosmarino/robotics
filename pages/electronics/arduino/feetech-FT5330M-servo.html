@@ -32,6 +32,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" id="mechanics" href="#">Mechanics</a>
+                        <a class="dropdown-item" id="material" href="#">Materials densities</a>
                     </div>
                 </li>
           </ul>
@@ -85,8 +86,8 @@
                     <li class="text-uppercase">digital pin 9 (&tilde;)</li>
                 </ul>
 
-                <div class="border p-3 mb-5">
-                    <h3 class="text-uppercase"><b>Experiment 1:</b></h3>
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment 1:</h3>
                     <h4 class="btn btn-outline-primary ">Equipment needed</h4>
                     <ul>
                         <li>1.5V AA battery: X4</li>
@@ -101,29 +102,35 @@
                     
                     <p>drawing and schematics here...</p>
 
-                    <h5>sketch</h5>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
 
-                    <pre>
-                        <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-                        
-                        <b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
-                        <font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;
-                        
-                        <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> 
-                        <font color="#000000">}</font>
-                         
-                        <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                         &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&lt;=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
-                         &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         &nbsp;<font color="#000000">}</font>
-                         &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&gt;=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
-                         &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         &nbsp;<font color="#000000">}</font>
-                        <font color="#000000">}</font>
-                    </pre>
+                        <div class="card-body">
+                            <pre>
+                                <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+                                
+                                <b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
+                                <font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;
+                                
+                                <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> 
+                                <font color="#000000">}</font>
+                                 
+                                <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&lt;=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
+                                 &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;<font color="#000000">}</font>
+                                 &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&gt;=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
+                                 &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;<font color="#000000">}</font>
+                                <font color="#000000">}</font>
+                            </pre>
+                        </div>
+                    </div>
 
                     <h5>observation</h5>
 
@@ -136,46 +143,52 @@
                     </ul>
                 </div>
 
-                <div class="border p-3 mb-5">
-                    <h3 class="text-uppercase"><b>Experiment 2:</b></h3>
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment 2:</h3>
                     <h4 class="btn btn-outline-primary ">Equipment needed</h4>
                     
                     <p>Same equipment as for experiment 1.</p>
 
                     <h5 class="btn btn-outline-info">Setup</h5>
                     
-                    <h5>sketch</h5>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
 
-                    <pre>
-                        <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-                        
-                        <b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
-                        <font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;
-                        
-                        <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> 
-                        <font color="#000000">}</font>
-                         
-                        <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font> 
-                         &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                        
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">60</font><font color="#000000">)</font><font color="#000000">;</font>
-                         &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                        
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">120</font><font color="#000000">)</font><font color="#000000">;</font> 
-                         &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                        
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">180</font><font color="#000000">)</font><font color="#000000">;</font> 
-                         &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                        
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">120</font><font color="#000000">)</font><font color="#000000">;</font> 
-                         &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                        
-                         &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">60</font><font color="#000000">)</font><font color="#000000">;</font>
-                         &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                        <font color="#000000">}</font>
-                    </pre>
+                        <div class="card-body">
+                            <pre>
+                                <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+                                
+                                <b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
+                                <font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;
+                                
+                                <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> 
+                                <font color="#000000">}</font>
+                                 
+                                <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font> 
+                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
+                                
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">60</font><font color="#000000">)</font><font color="#000000">;</font>
+                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
+                                
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">120</font><font color="#000000">)</font><font color="#000000">;</font> 
+                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
+                                
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">180</font><font color="#000000">)</font><font color="#000000">;</font> 
+                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
+                                
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">120</font><font color="#000000">)</font><font color="#000000">;</font> 
+                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
+                                
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">60</font><font color="#000000">)</font><font color="#000000">;</font>
+                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
+                                <font color="#000000">}</font>
+                            </pre>
+                        </div>
+                    </div>
 
                     <h5>observation</h5>
 
@@ -185,8 +198,8 @@
                     </ul>
                 </div>
 
-                <div class="border p-3 mb-5">
-                    <h3 class="text-uppercase"><b>Experiment 3:</b></h3>
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment 3:</h3>
 
                     <h4 class="btn btn-outline-primary ">Equipment needed</h4>
 
