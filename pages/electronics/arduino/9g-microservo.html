@@ -9,14 +9,14 @@
     <title>9g micro servo</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link" id="robotics" href="">Home</a>
+                <a class="nav-link text-light" id="robotics" href="">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link text-light dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
                         Electronics
                     </a>
                     <div class="dropdown-menu">
@@ -27,7 +27,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                         Physics
                     </a>
                     <div class="dropdown-menu">
@@ -91,6 +91,8 @@
                         <li>Arduino USB cable</li>
                     </ul>
 
+                    <p><span class="text-uppercase">note:</span> The servo can be powered directly from the 5V pin in the Arduino, though it is not recommendable due to the servo's high current demand.</p>
+
                     <h5 class="btn btn-outline-info">Setup</h5>
                     
                     <p>drawing and schematics here...</p>
@@ -123,6 +125,8 @@
                             </pre>
                         </div>
                     </div>
+
+                    <h4><span class="text-uppercase">note:</span> the servo signal connector can connect to any digital pin as the PWM mode is handled by the Servo library.</h4>
 
                     <h5>observation</h5>
 
@@ -181,27 +185,7 @@
 
                     <ul>
                         <li>Servo horn moves at the angles in the sketch by rotating at maximum speed allowed</li>
-                    </ul>
-                </div>
-
-                <div class="border p-3 mb-5 shadow-lg">
-                    <h3 class="text-uppercase">Experiment 3:</h3>
-
-                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
-
-                    <ul>
-                        <li>all other components from experiment 1</li>
-                    </ul>
-
-                    <h5>Setup</h5>
-
-                    <p>Use an arduino pin that doesn't have the PWM function</p>
-
-                    <h5>observations</h5>
-
-                    <ul>
-                        <li></li>
-                        <li></li>
+                        <li>the larger the difference between 2 angles, the longer the delay; it takes the horn longer to travel from one position to another</li>
                     </ul>
                 </div>
             </div>

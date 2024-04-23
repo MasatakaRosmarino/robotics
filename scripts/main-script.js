@@ -27,6 +27,22 @@ for(var i = 0; i < imagesList.length; i++){
 }
 /** */
 
+/** get icons tags and set the exact path extending from the rootFolderPath variable
+var iconsList = document.getElementsByClassName("icon");
+
+for(var i = 0; i < iconsList.length; i++){
+    var srcPath = iconsList[i].getAttribute("src");
+    srcPath = rootFolderPath + "/asset/icons/" + srcPath;
+    iconsList[i].setAttribute("src", srcPath);
+}
+ */
+
+/** Setting experiments order */
+var experimentsList = document.getElementsByClassName("experiment-counter");
+
+for(var i = 0; i < experimentsList.length; i++){
+    experimentsList[i].innerHTML = i + 1;
+}
 /** get anchor tags and set the exact path extending from the rootFolderPath variable*/
 var indexAnchor = document.getElementById("robotics");
 var analogAnchor = document.getElementById("analog");
@@ -88,15 +104,15 @@ function showPagesMenu(){
         menuList.push(createMenuElement(currentUrlFolder + "/communication.html", "dropdown-item", "Communication"));
         menuList.push(createMenuElement(currentUrlFolder + "/digital-pins-output.html", "dropdown-item", "Digital pins outputs"));
         menuList.push(createMenuElement(currentUrlFolder + "/pir-sensor-and-led.html", "dropdown-item", "PIR sensor with LED"));
+        menuList.push(createMenuElement(currentUrlFolder + "/HC-SR04-ultrasonic-sensor.html", "dropdown-item", "HC-SR04 ultrasonic sensor"));        
         menuList.push(createMenuElement(currentUrlFolder + "/analog-input.html", "dropdown-item", "Analog input"));
         menuList.push(createMenuElement(currentUrlFolder + "/analog-input-output.html", "dropdown-item", "Analog input and output"));
         menuList.push(createMenuElement(currentUrlFolder + "/analog-output.html", "dropdown-item", "Analog output"));
         menuList.push(createMenuElement(currentUrlFolder + "/photoresistor.html", "dropdown-item", "Photoresistor"));
         menuList.push(createMenuElement(currentUrlFolder + "/l293d.html", "dropdown-item", "L293D DC motor driver"));
         menuList.push(createMenuElement(currentUrlFolder + "/9g-microservo.html", "dropdown-item", "9g microservo"));
-        menuList.push(createMenuElement(currentUrlFolder + "/kingmax-RGD01L-servo.html", "dropdown-item", "kingmax-RGD01L servo"));
-        menuList.push(createMenuElement(currentUrlFolder + "/feetech-FT5330M-servo.html", "dropdown-item", "feetech-FT5330M servo"));
-        menuList.push(createMenuElement(currentUrlFolder + "/kingmax-DCS16942CHV.html", "dropdown-item", "kingmax-DCS16942CHV servo"));
+        menuList.push(createMenuElement(currentUrlFolder + "/standard-servo.html", "dropdown-item", "Standard servo"));
+        menuList.push(createMenuElement(currentUrlFolder + "/kingmax-DCS16942CHV-servo.html", "dropdown-item", "kingmax-DCS16942CHV servo"));
     }
     
     if(currentUrlFolder.includes("mechanics")){

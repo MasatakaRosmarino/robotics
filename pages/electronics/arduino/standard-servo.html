@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+
+    <!-- Highlight.js CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>Standard servo</title>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-itemactive">
+                <a class="nav-link text-light text-light" id="robotics" href="">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Electronics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="analog" href="">Analog</a>
+                        <a class="dropdown-item" id="digital" href="">Digital</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="arduino" href="">Arduino</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Physics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="mechanics" href="#">Mechanics</a>
+                        <a class="dropdown-item" id="material" href="#">Materials densities</a>
+                    </div>
+                </li>
+          </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-uppercase my-4">standard servo experiment</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Standard servo features</h3>
+
+                <h4>Size:</h4>
+
+                <ul>
+                    <li>Length: ~ 40 mm</li>
+                    <li>Width: ~ 20 mm</li>
+                    <li>Height: ~ 38 mm</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li>1.5V AA battery: X4</li>
+                        <li>4 AA battery holder</li>
+                        <li>Jumper cables X4</li>
+                        <li>feetech-FT5330M servo motor</li>
+                        <li>Arduino uno</li>
+                        <li>Arduino USB cable</li>
+                    </ul>
+
+                    
+                    <p>servo motor hooked up to arduino uno pins:</p>
+                    <ul>
+                        <li class="text-uppercase">gnd</li>
+                        <li class="text-uppercase">digital pin 9 (~)</li>
+                    </ul>
+
+                    <h5 class="btn btn-outline-info">Setup</h5>
+                    
+                    <p>drawing and schematics here...</p>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <pre>
+                                <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+                                
+                                <b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
+                                <font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;
+                                
+                                <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> 
+                                <font color="#000000">}</font>
+                                 
+                                <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&lt;=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
+                                 &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;<font color="#000000">}</font>
+                                 &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&gt;=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
+                                 &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;<font color="#000000">}</font>
+                                <font color="#000000">}</font>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h3>Servos used</h3>
+
+                    <div class="border mb-2 p-2">
+                        <h4>1 - Kingmax-RGD01L servo</h4>
+    
+                        <ul>
+                            <li>Operating Speed (5.0V):0.14sec/60 degrees</li>
+                            <li>Operating Speed (6.0V):0.12sec/60 degrees</li>
+                            <li>Operating Speed (7.4V):0.10sec/60 degrees</li>
+                            <li>Operating Speed (8.4V):0.09sec/60 degrees</li>
+                            <li>Stall Torque (5.0V):10.3kg.cm (143.06oz/in)</li>
+                            <li>Stall Torque (6.0V):12.0kg.cm (166.68oz/in)</li>
+                            <li>Stall Torque (7.4V):15.0kg.cm (208.35oz/in)</li>
+                            <li>Stall Torque (8.4V):17.0kg.cm (236.13oz/in)</li>
+                            <li>Dimensions:40X20X27.9mm /1.56X0.78X1.08in</li>
+                            <li>Weight:52.5g (1.85oz)</li>
+                            <li>Connector Wire Length:JR300 mm (11.70in)</li>
+                        </ul>
+    
+                        <h5>Servo manufacturer link</h5>
+                        <a href="http://www.kingmaxhobby.hk/pd.jsp?id=263" target="_blank">kingmax-RGD01L servo specs</a>
+                    </div>
+
+                    <div class="border mb-2 p-2">
+                        <h4>2 - Feetech-FT5330M servo motor specs</h4>
+
+                        <ul>
+                            <li>Operating Voltage Range: 6V-7.4V</li>
+                            <li>Idle current (at stopped): 6MA @ 7.4V</li>
+                            <li>No load speed: 0.238 sec/60° @ 6V</li>
+                            <li>No load speed: 0.192 sec/60° @ 7.4V</li>
+                            <li>Runnig current (at no load): 180mA @ 7.4V</li>
+                            <li>Peak stall torque: 28.8kg.cm @ 6V</li>
+                            <li>Peak stall torque: 35.5kg.cm @ 7.4V</li>
+                            <li>Rated torque: 11.8 kg.cm @ 7.4V</li>
+                            <li>Stall current: 3.9A @ 7.4V</li>
+                            <li>Stop position: 1500 sec</li>
+                            <li>Running degree: 220° Continuous Rotation</li>
+                            <li>Pulse width range: 500~2500 usec</li>
+                        </ul>
+
+                        <h5>Servo manufacturer link</h5>
+                        <a href="https://www.feetechrc.com/74v-35-kgcm-digital-180-degree-aluminum-medium-shell-steel-gear-iron-core-steering-gear.html" target="_blank">feetech-FT5330M servo specs</a>
+                    </div>
+
+                    <div class="border mb-2 p-2">
+                        <h4>3 - DS-S013M servo motor specs</h4>
+
+                        <ul>
+                            <li>Operating Voltage: 4.8-6V DC</li>
+                            <li>Standby Current: ≤20mA at 4.8V</li>
+                            <li>No Load Current: ≤130mA at 4.8V; ≤140mA at 6.0V</li>
+                            <li>No Load Speed: ≤0.23sec/60° at 4.8V; ≤0.21sec/60° at 6.0V</li>
+                            <li>Rated Torque: ≥1.5kgf·cm at 4.8V; ≥1.7kgf·cm at 6.0V</li>
+                            <li>Stall Current: ≤2.1A at 4.8V; ≤2.4A at 6.0V</li>
+                            <li>Stall Torque: ≥6.0kgf·cm at 4.8V; ≥6.8kgf·cm at 6.0 V</li>
+                            <li>Rotating Direction: CCW (1000→2000μs)</li>
+                            <li>Pulse Width Range: 500~2500μs</li>
+                            <li>Neutral Position: 1500μs</li>
+                            <li>Operating Travel Angle: 90°±10° (1000~2000μs)</li>
+                            <li>Mechanical Limit Angle: 210°</li>
+                            <li>Angle deviation: ≤ 1°</li>
+                            <li>Dead Band Width: ≤ 5 μs</li>
+                            <li>Operating Temperature Range: -10℃~+50℃; ≤90%RH</li>
+                            <li>Storage Temperature Range: -20℃~+60℃; ≤90%RH</li>
+                            <li>Weight: 49± 1g</li>
+                            <li>Case Material: PA</li>
+                            <li>Gear Set Material: Metal</li>
+                            <li>Motor Type: Iron Core</li>
+                        </ul>
+
+                        <h5>Servo manufacturer link</h5>
+                        <a href="https://www.dspowerservo.com/6kg-metal-gear-pwm-digital-servo-suitable-for-smart-door-locks-product/" target="_blank">DS-S013M servo specs</a>
+                    </div>
+
+                    <div class="border mb-2 p-2">
+                        <h4>4 - DSSERVO 20Kg torque</h4>
+
+                        <ul>
+                            <li>PWM bandwidth: 1500 usec</li>
+                            <li>Operating voltage: 4.8 V ~ 6V</li>
+                            <li>Operating temperature: -20 C° ~ +60 C°</li>
+                            <li>Torque: 17,2Kg. cm at 4.8 V, 20,3Kg. cm at 6.0 V</li>
+                            <li>Rotation speed: 0,15 seg/60 deg at 4.8 V, 0,13 seg/60 deg at 6.0 V</li>
+                            <li>Rotation angle: 180 / 270 deg</li>
+                            <li>No load current: 470mA at 4.8 V, 650mA at 6.0 V</li>
+                            <li>Load current: 750mAat 4.8 V, 950mA at 6.0 V</li>
+                            <li>Dead bandwidth: 2USEC</li>
+                            <li>Size: 40,5 X 20,2 X 40,3 mm</li>
+                            <li>Weight: 62g (w/out accessories)</li>
+                            <li>Connector type: 26AWG, JR connector</li>
+                        </ul>
+                    </div>
+
+                    <hr>
+
+                    <h5>observation</h5>
+
+                    <p>All servo horns rotates from 0º to 180º when using the 4 AA batteries providing a voltage dropping from 6.36V to 5.7V.</p>
+                </div>
+
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <pre>
+                                <code class="cpp">
+                                    #include &lt;Servo.h&gt;
+
+                                        Servo myservo;
+                                        
+                                        void setup() {
+                                          myservo.attach(3); 
+                                        }
+                                        
+                                        void loop() {
+                                          myservo.write(0);
+                                          delay(1800);
+                                        
+                                          myservo.detach();
+                                          myservo.attach(3); 
+                                          
+                                          myservo.write(180);
+                                          delay(1800);
+                                          
+                                          myservo.detach();
+                                          myservo.attach(3); 
+                                        }                                        
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+
+                    <ul>
+                        <li>DS-S013M servo</li>
+                        <li>Kingmax-RGD01L servo</li>
+                        <li>DSSERVO 20Kg torque</li>
+                        <li>Feetech-FT5330M servo</li>
+                        <li>4 X AA batteries: Energizer partially discharged (total V ~ 5.7V)</li>
+                        <li>4 x AA battery holder</li>
+                        <li>4 x C batteries</li>
+                        <li>4 x C battery holder</li>
+                        <li>5 x AA batteries</li>
+                        <li>5 x AA battery holder</li>
+                        <li>6 x AA batteries</li>
+                        <li>6 x AA battery holder</li>
+                        <li>Aluminum square rod 20 x 20 x 100 mm, 1 mm thickness</li>
+                        <li>Multimeter</li>
+                    </ul>
+
+                    <h5>Observation with DS-S013M servo</h5>
+                    
+                    <p>DS-S013M servo is not rotating the rod all the way through. The behaviour persists in the following conditions:</p>
+                    
+                    <ul>
+                        <li class="mb-2">4 AA batteries (5.7V)
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servoModal1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                                  </svg> watch
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="servoModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">DS-S013M servo</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <video src="../../../asset/videos/DS-S013M servo_20x20x100_rod_aa_bat.webm" controls></video>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-2">4 C batteries (~6.8V)
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servoModal2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                                  </svg> watch
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="servoModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">DS-S013M servo</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <video src="../../../asset/videos/DS-S013M servo_20x20x100_rod_c_bat.webm" controls></video>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                
+                    <h5>Observation with Kingmax-RGD01L servo</h5>
+
+                    <ul>
+                        <li>Measured voltage: ~ 9.5 V</li>
+                        <li>At 9V servo cannot rotate the rod all the way through</li>
+                    </ul>
+
+                    <p>Kingmax-RGD01L servo cannot rotate the rod either.
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servoModal3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                              </svg> watch
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="servoModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Kingmax-RGD01L servo</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <video src="../../../asset/videos/Kingmax-RGD01L_2x2x100_aluminum_rod.webm" controls></video>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p> 
+
+                    <h5>Observation with Feetech-FT5330M servo +  6V battery pack</h5>
+
+                    <p>Measured voltage is 5.7V (partially discharged). With no load, the servo doesn't even rotate the gear </p>
+
+                    <h5>Observation with Feetech-FT5330M servo +  7.5V battery pack</h5>
+
+                    <ul>
+                        <li>Measured voltage: ~ 7.97 V</li>
+                        <li>Servo can move the rod all the way through
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servoModal4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                                  </svg> watch
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="servoModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Feetech-FT5330M servo</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <video src="../../../asset/videos/Feetech-FT5330M_2x2x100_aluminum_rod.webm" controls></video>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h5>Observation with DSServo 20Kg torque</h5>
+
+                    <ul>
+                        <li>Measured voltage: ~ 7.96 V</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js" async></script>
+</body>
+</html>

@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
     <link rel="stylesheet" href="../../../styles/main.css">
-    <title>feetech-FT5330M servo</title>
+    <title>kingmax-DCS16942CHV servo</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link" id="robotics" href="">Home</a>
+                <a class="nav-link text-light" id="robotics" href="">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link text-light dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
                         Electronics
                     </a>
                     <div class="dropdown-menu">
@@ -27,7 +27,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                         Physics
                     </a>
                     <div class="dropdown-menu">
@@ -51,7 +51,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center text-uppercase my-4">feetech-FT5330M servo experiment</h1>
+                <h1 class="text-center text-uppercase my-4">kingmax-DCS16942CHV servo experiment</h1>
             </div>
         </div>
 
@@ -62,23 +62,14 @@
                 <h4>servo motor specs</h4>
 
                 <ul>
-                    <li>Operating Voltage Range: 6V-7.4V</li>
-                    <li>Idle current (at stopped): 6MA @ 7.4V</li>
-                    <li>No load speed: 0.238 sec/60° @ 6V</li>
-                    <li>No load speed: 0.192 sec/60° @ 7.4V</li>
-                    <li>Runnig current (at no load): 180mA @ 7.4V</li>
-                    <li>Peak stall torque: 28.8kg.cm @ 6V</li>
-                    <li>Peak stall torque: 35.5kg.cm @ 7.4V</li>
-                    <li>Rated torque: 11.8 kg.cm @ 7.4V</li>
-                    <li>Stall current: 3.9A @ 7.4V</li>
-                    <li>Stop position: 1500 sec</li>
-                    <li>Running degree: 220° Continuous Rotation</li>
-                    <li>Pulse width range: 500~2500 usec</li>
-                    <li></li>
+                    <li>Operating Speed (6.0V): 0.18sec/60 degrees</li>
+                    <li>Operating Speed (7.4V): 0.14sec/60 degrees</li>
+                    <li>Stall Torque (6.0V): 40.2kg.cm (558.38oz/in)</li>
+                    <li>Stall Torque (7.4V): 50.30kg.cm (698.67oz/in)</li>
                 </ul>
 
                 <h4>Servo manufacturer link</h4>
-                <a href="https://www.feetechrc.com/74v-35-kgcm-digital-180-degree-aluminum-medium-shell-steel-gear-iron-core-steering-gear.html" target="_blank">feetech-FT5330M servo specs</a>
+                <a href="http://www.kingmaxhobby.hk/pd.jsp?id=22" target="_blank">kingmax-DCS16942CHV servo specs</a>
 
                 <p>servo motor hooked up to arduino uno pins:</p>
                 <ul>
@@ -93,7 +84,7 @@
                         <li>1.5V AA battery: X4</li>
                         <li>4 AA battery holder</li>
                         <li>Jumper cables X4</li>
-                        <li>feetech-FT5330M servo motor</li>
+                        <li>kingmax-DCS16942CHV servo motor</li>
                         <li>Arduino uno</li>
                         <li>Arduino USB cable</li>
                     </ul>
@@ -194,7 +185,10 @@
 
                     <ul>
                         <li>Battery pack (Energizer brand) voltage is 6.36V</li>
-                        <li>Servo horn positions itself correctly at the angles indicated in the sketch by rotating at maximum speed allowed</li>
+                        <li>Servo horn positions itself correctly at the angles indicated in the sketch but it is a bit slow</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
                     </ul>
                 </div>
 
