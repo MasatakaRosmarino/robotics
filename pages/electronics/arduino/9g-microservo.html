@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
     <link rel="stylesheet" href="../../../styles/main.css">
+
+    <!-- Highlight.js CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
     <title>9g micro servo</title>
 </head>
 <body>
@@ -80,7 +86,7 @@
                 </ul>
 
                 <div class="border p-3 mb-5 shadow-lg">
-                    <h3 class="text-uppercase">Experiment 1:</h3>
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
                     <h4 class="btn btn-outline-primary ">Equipment needed</h4>
                     <ul>
                         <li>1.5V AA battery: X4</li>
@@ -136,7 +142,7 @@
                 </div>
 
                 <div class="border p-3 mb-5 shadow-lg">
-                    <h3 class="text-uppercase">Experiment 2:</h3>
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
                     <h4 class="btn btn-outline-primary ">Equipment needed</h4>
                     
                     <p>Same equipment as for experiment 1.</p>
@@ -196,7 +202,7 @@
                 <h2 class="text-center text-uppercase my-4">sg-90 servo torque test</h2>
 
                 <div class="border p-3 mb-5 shadow-lg">
-                    <h3 class="text-uppercase">Experiment 1:</h3>
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
                     <h4 class="btn btn-outline-primary ">Equipment needed</h4>
 
                     <p>servo motor hooked up to arduino uno pins:</p>
@@ -277,6 +283,132 @@
 
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
+    
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <pre>
+                                <code class="cpp">
+                                    #include &lt;Servo.h&gt;
+
+                                        Servo myservo;
+                                        
+                                        void setup() {
+                                            myservo.attach(3); 
+                                        }
+                                        
+                                        void loop() {
+                                            myservo.write(0);
+                                            delay(1800);
+                                        
+                                            myservo.detach();
+                                            myservo.attach(3); 
+                                            
+                                            myservo.write(180);
+                                            delay(1800);
+                                            
+                                            myservo.detach();
+                                            myservo.attach(3); 
+                                        }                                        
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <h4>Test A: servo moving the rod from one end</h4>
+
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+
+                    <ul>
+                        <li>1.5V AA battery: X4</li>
+                        <li>4 AA battery holder</li>
+                        <li>Jumper cables X4</li>
+                        <li>9G micro servo motor</li>
+                        <li>Arduino uno</li>
+                        <li>Arduino USB cable</li>
+                        <li>Aluminum rod 10 mm x 10 mm x 100 mm</li>
+                    </ul>
+
+                    <h4>Observation</h4>
+
+                    <p>Servo cannot turn the rod. 
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servoModal1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                                </svg> watch
+                        </button>
+                    
+                        <!-- Modal -->
+                        <div class="modal fade" id="servoModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">9g micro servo test 1</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <video src="../../../asset/videos/type_1_lever_unbalanced.webm" controls></video>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+
+                    <h4>Test B: servo moving the rod from the center</h4>
+
+                    <h4>Observation</h4>
+
+                    <p>Servo can turn the rod. 
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servoModal2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                                </svg> watch
+                        </button>
+                    
+                        <!-- Modal -->
+                        <div class="modal fade" id="servoModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">9g micro servo test 2</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <video src="../../../asset/videos/type_1_lever_balanced.webm" controls></video>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                </div>    
+            </div><!-- col -->
+        </div><!-- row -->
 
         <div class="row">
             <div class="col-12">

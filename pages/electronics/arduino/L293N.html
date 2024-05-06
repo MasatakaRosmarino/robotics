@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+
+    <!-- Highlight.js CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>L298N Motor Driver</title>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link text-light" id="robotics" href="">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Electronics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="analog" href="">Analog</a>
+                        <a class="dropdown-item" id="digital" href="">Digital</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="arduino" href="">Arduino</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Physics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="mechanics" href="#">Mechanics</a>
+                        <a class="dropdown-item" id="material" href="#">Materials densities</a>
+                    </div>
+                </li>
+          </ul>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown">
+        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Index
+        </button>
+        <div class="dropdown-menu" id="content-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+    <!--  -->
+
+    <div class="container">
+        <h1 class="text-center text-uppercase my-4">L293N experiments</h1>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table-auto w-full border-1 border-aac-grey rounded-sm mb-3 break-all">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h3 class="font-bold text-2xl px-3 py-3 text-left">Technical</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-3 w-3/5">Interface</td>
+                            <td>Parallel</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Logic Function</td>
+                            <td>AND</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Max Operating Temperature</td>
+                            <td>70 °C</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Max Output Current</td>
+                            <td>2 A</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Max Output Voltage</td>
+                            <td>36 V</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Max Supply Voltage</td>
+                            <td>36 V</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Min Operating Temperature</td>
+                            <td>0 °C</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Min Supply Voltage</td>
+                            <td>4.5 V</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Nominal Supply Current</td>
+                            <td>24 mA</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Number of Channels</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Number of Drivers</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Number of Outputs</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Output Current</td>
+                            <td>1 A</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Output Voltage</td>
+                            <td>36 V</td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 w-3/5">Termination</td>
+                            <td>Through Hole</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
+
+                    <h4>Determine output voltage</h4>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <pre>
+                                <code class="cpp">
+                                    int motor1     = 8; 
+                                    int direction1 = 9; 
+                                        
+                                    void setup(){ 
+                                        pinMode(motor1, OUTPUT);  
+                                        pinMode(direction1, OUTPUT);  
+                                    } 
+                                    
+                                    void loop(){ 
+                                        digitalWrite(motor1, HIGH);   
+                                        digitalWrite(direction1, LOW);             
+                                    }                                     
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <h4>Equipment needed</h4>
+
+                    <ul>
+                        <li>1.5 V AA batteries x 6</li>
+                        <li>6 AA Battery holder</li>
+                        <li>DC motor 130 size</li>
+                        <li>Multimeter</li>
+                        <li>Dupont jumper wires male-female</li>
+                    </ul>
+
+                    <h4 class="btn btn-outline-info">Procedure</h4>
+
+                    <ul>
+                        <li>Measure the voltage across the input voltage pins</li>
+                        <li>Measure the output voltage pins</li>
+                    </ul>
+
+                    <h4 class="btn btn-outline-info">Observations</h4>
+
+                    <ul>
+                        <li>Measured batteries voltage: 9.37 V</li>
+                        <li>Measured output voltage from L293N (motor 1): 4.03 V</li>
+                    </ul>
+                </div>    
+            </div><!-- col -->
+        </div><!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <!-- experiment card -->
+                <div class="border p-3 mb-5 shadow-lg">
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
+                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    <ul>
+                        <li></li>
+                    </ul>                    
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div>    
+
+    <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../../lib/bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../scripts/main-script.js" async></script>
+</body>
+</html>

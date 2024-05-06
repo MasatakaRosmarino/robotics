@@ -25,17 +25,6 @@ for(var i = 0; i < imagesList.length; i++){
     srcPath = rootFolderPath + "/asset/images/" + srcPath;
     imagesList[i].setAttribute("src", srcPath);
 }
-/** */
-
-/** get icons tags and set the exact path extending from the rootFolderPath variable
-var iconsList = document.getElementsByClassName("icon");
-
-for(var i = 0; i < iconsList.length; i++){
-    var srcPath = iconsList[i].getAttribute("src");
-    srcPath = rootFolderPath + "/asset/icons/" + srcPath;
-    iconsList[i].setAttribute("src", srcPath);
-}
- */
 
 /** Setting experiments order */
 var experimentsList = document.getElementsByClassName("experiment-counter");
@@ -43,6 +32,8 @@ var experimentsList = document.getElementsByClassName("experiment-counter");
 for(var i = 0; i < experimentsList.length; i++){
     experimentsList[i].innerHTML = i + 1;
 }
+
+
 /** get anchor tags and set the exact path extending from the rootFolderPath variable*/
 var indexAnchor = document.getElementById("robotics");
 var analogAnchor = document.getElementById("analog");
@@ -109,7 +100,8 @@ function showPagesMenu(){
         menuList.push(createMenuElement(currentUrlFolder + "/analog-input-output.html", "dropdown-item", "Analog input and output"));
         menuList.push(createMenuElement(currentUrlFolder + "/analog-output.html", "dropdown-item", "Analog output"));
         menuList.push(createMenuElement(currentUrlFolder + "/photoresistor.html", "dropdown-item", "Photoresistor"));
-        menuList.push(createMenuElement(currentUrlFolder + "/l293d.html", "dropdown-item", "L293D DC motor driver"));
+        menuList.push(createMenuElement(currentUrlFolder + "/L293N.html", "dropdown-item", "L293N DC motor driver"));
+        menuList.push(createMenuElement(currentUrlFolder + "/L293D.html", "dropdown-item", "L293D DC motor driver"));
         menuList.push(createMenuElement(currentUrlFolder + "/9g-microservo.html", "dropdown-item", "9g microservo"));
         menuList.push(createMenuElement(currentUrlFolder + "/standard-servo.html", "dropdown-item", "Standard servo"));
         menuList.push(createMenuElement(currentUrlFolder + "/kingmax-DCS16942CHV-servo.html", "dropdown-item", "kingmax-DCS16942CHV servo"));
@@ -123,7 +115,7 @@ function showPagesMenu(){
     }
     
     if(currentUrlFolder.includes("materials")){
-        menuList.push(createMenuElement(currentUrlFolder + "/materials-densities.html", "dropdown-item", "Materials densities"));
+        menuList.push(createMenuElement(currentUrlFolder + "/materials-densities.html", "dropdown-item", "Materials"));
     }
     
     for(var i=0; i< menuList.length; i++){
