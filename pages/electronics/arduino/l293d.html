@@ -4,47 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" id="bootstrap" href="">
-    <link rel="stylesheet" id="main-style" href="">
-    <title>L239D motor shield</title>
+    <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+
+    <!-- Highlight.js CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>L298D Motor Driver</title>
 </head>
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
-        <a class="navbar-brand" id="robotics" href="">Robotics</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                    <a class="nav-link text-light" href="../electronics-main.html">Electronics</a>
-                </li> -->
-
-                <li>
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Electronics
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item text-capitalize" id="analog" href="">analog</a>
-                            <a class="dropdown-item text-capitalize" id="digital" href="">digital</a>
-                            <a class="dropdown-item text-capitalize" id="arduino" href="">arduino</a>
-                        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link text-light" id="robotics" href="">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Electronics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="analog" href="">Analog</a>
+                        <a class="dropdown-item" id="digital" href="">Digital</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="arduino" href="">Arduino</a>
                     </div>
                 </li>
-                <li>
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Physics
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item text-capitalize" id="mechanics" href="">mechanics</a>
-                        </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Physics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="mechanics" href="#">Mechanics</a>
+                        <a class="dropdown-item" id="material" href="#">Materials densities</a>
                     </div>
                 </li>
-            </ul>
+          </ul>
         </div>
     </nav>
 
@@ -60,13 +57,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center text-uppercase my-4">L239D Motor Shield</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <h4 class="text-capitalize">L293 board</h4>
+                <h4 class="text-capitalize">L293D board</h4>
 
                 <img src="L293D.jpg" alt="L293D motor shield">
 
@@ -76,7 +67,7 @@
                     <li>Input voltage: 4.5 ~ 36 V</li>
                     <li>Maximum input-output current</li>
                     <li>Maximum DC motor connections: 4</li>
-                    <li>Maxium servo motor connections: 2</li>
+                    <li>Maximum servo motor connections: 2</li>
                 </ul>
 
                 <h4>Required libraries</h4>
@@ -105,117 +96,18 @@
                         </div>
 
                         <div class="card-body">
-                            <pre>
-                                <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-                                
-                                <b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
-                                <font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;
-                                
-                                <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> 
-                                <font color="#000000">}</font>
-                                 
-                                <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                                 &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&lt;=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
-                                 &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 &nbsp;<font color="#000000">}</font>
-                                 &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&gt;=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> 
-                                 &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 &nbsp;<font color="#000000">}</font>
-                                <font color="#000000">}</font>
-                            </pre>
+                            
                         </div>
                     </div>
 
                     <h5>observation</h5>
 
                     <ul>
-                        <li>Battery pack (Energizer brand) voltage is 6.36V</li>
-                        <li>Servo horn rotates from 0 to 180º</li>
                         <li></li>
                         <li></li>
                         <li></li>
                     </ul>
                 </div>
-
-                <div class="border p-3 mb-5 shadow-lg">
-                    <h3 class="text-uppercase">Experiment 2:</h3>
-                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
-                    
-                    <p>Same equipment as for experiment 1.</p>
-
-                    <h5 class="btn btn-outline-info">Setup</h5>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>sketch</h5>
-                        </div>
-
-                        <div class="card-body">
-                            <pre>
-                                <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-                                
-                                <b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
-                                <font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;
-                                
-                                <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> 
-                                <font color="#000000">}</font>
-                                 
-                                <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font> 
-                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                                
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">60</font><font color="#000000">)</font><font color="#000000">;</font>
-                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                                
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">120</font><font color="#000000">)</font><font color="#000000">;</font> 
-                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                                
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">180</font><font color="#000000">)</font><font color="#000000">;</font> 
-                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                                
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">120</font><font color="#000000">)</font><font color="#000000">;</font> 
-                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                                
-                                 &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">60</font><font color="#000000">)</font><font color="#000000">;</font>
-                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">;</font>
-                                <font color="#000000">}</font>
-                            </pre>
-                        </div>
-                    </div>
-
-                    <h5>observation</h5>
-
-                    <ul>
-                        <li>Battery pack (Energizer brand) voltage is 6.36V</li>
-                        <li>Servo horn positions itself correctly at the angles indicated in the sketch by rotating at maximum speed allowed</li>
-                    </ul>
-                </div>
-
-                <div class="border p-3 mb-5 shadow-lg">
-                    <h3 class="text-uppercase">Experiment 3:</h3>
-
-                    <h4 class="btn btn-outline-primary ">Equipment needed</h4>
-
-                    <ul>
-                        <li>all other components from experiment 1</li>
-                    </ul>
-
-                    <h5>Setup</h5>
-
-                    <p>Use an arduino pin that doesn't have the PWM function</p>
-
-                    <h5>observations</h5>
-
-                    <ul>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </div>

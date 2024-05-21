@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../lib/bootstrap-4.6/css/bootstrap.css">
     <link rel="stylesheet" href="../../../styles/main.css">
-    <title>Electronics Notes</title>
+    <title>Photoresistor</title>
 </head>
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
@@ -53,74 +53,59 @@
 
         <div class="row">
             <div class="col-12">
-                <h4>setup</h4>
-
-                <ul>
-                    <li>pc</li>
-                    <li>arduino uno board</li>
-                    <li>arduino-PC USB cable</li>
-                    <li>photoresistor</li>
-                    <li>resistors with the following values:
-                        <ul>
-                            <li>1 K&#8486;</li>
-                            <li>4700 &#8486; or 5000 &#8486;</li>
-                            <li>10 K&#8486;</li>
-                        </ul>
-                    </li>
-                    <li>jumper wires X 3</li>
-                </ul>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h5>sketch</h5>
-                    </div>
-
-                    <div class="card-body">
-                        <pre>
-                            <font color="#00979c">int</font> <font color="#000000">analogIn</font> <font color="#434f54">=</font> <font color="#000000">A0</font><font color="#000000">;</font>
-                            
-                            <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                             &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
-                            <font color="#000000">}</font>
-                            
-                            <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
-                             &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">analogIn</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
-                             &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
-                            <font color="#000000">}</font>
-                            
-                        </pre>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-             
-        <div class="row">
-            <div class="col-12">
-                <h4 class="text-capitalize">setup</h4>
-                
-                <p>drawing of arduino and wired components here</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <h4 class="text-capitalize">Observation with 5V output voltage from Arduino</h4>
-                
-                <ul>
-                    <li>analog input reading goes from 0 to 1023</li>
-                    <li>when total resistance increases (darker) the reading value increases (gets closer to 1023)</li>
-                    <li>when total resistance decreases (brighter) the reading value decreases (gets closer to 0)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
                 <div class="border p-3 mb-5 shadow-lg">
-                </div>    
-            </div><!-- col -->
-        </div><!-- row -->
+                    <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
+
+                    <h4>Equipment needed</h4>
+    
+                    <ul>
+                        <li>pc</li>
+                        <li>arduino uno board</li>
+                        <li>arduino-PC USB cable</li>
+                        <li>photoresistor</li>
+                        <li>resistors with the following values:
+                            <ul>
+                                <li>1 K&#8486;</li>
+                                <li>4700 &#8486; or 5000 &#8486;</li>
+                                <li>10 K&#8486;</li>
+                            </ul>
+                        </li>
+                        <li>jumper wires X 3</li>
+                    </ul>
+
+                    <p>drawing of arduino and wired components here</p>
+    
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
+    
+                        <div class="card-body">
+                            <pre>
+                                <font color="#00979c">int</font> <font color="#000000">analogIn</font> <font color="#434f54">=</font> <font color="#000000">A0</font><font color="#000000">;</font>
+                                
+                                <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
+                                <font color="#000000">}</font>
+                                
+                                <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+                                 &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#d35400">analogRead</font><font color="#000000">(</font><font color="#000000">analogIn</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
+                                 &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+                                <font color="#000000">}</font>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <h4 class="text-capitalize">Observation with 5V output voltage from Arduino</h4>
+                
+                    <ul>
+                        <li>analog input reading goes from 0 to 1023</li>
+                        <li>when total resistance increases (darker) the reading value increases (gets closer to 1023)</li>
+                        <li>when total resistance decreases (brighter) the reading value decreases (gets closer to 0)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>    
 
     <script src="../../../lib/jquery/jquery-3.5.1.slim.min.js"></script>

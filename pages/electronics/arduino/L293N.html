@@ -69,14 +69,6 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="px-3 w-3/5">Interface</td>
-                            <td>Parallel</td>
-                        </tr>
-                        <tr>
-                            <td class="px-3 w-3/5">Logic Function</td>
-                            <td>AND</td>
-                        </tr>
-                        <tr>
                             <td class="px-3 w-3/5">Max Operating Temperature</td>
                             <td>70 °C</td>
                         </tr>
@@ -124,12 +116,8 @@
                             <td class="px-3 w-3/5">Output Voltage</td>
                             <td>36 V</td>
                         </tr>
-                        <tr>
-                            <td class="px-3 w-3/5">Termination</td>
-                            <td>Through Hole</td>
-                        </tr>
                     </tbody>
-                    </table>
+                </table>
             </div>
         </div>
 
@@ -169,24 +157,34 @@
 
                     <ul>
                         <li>1.5 V AA batteries x 6</li>
-                        <li>6 AA Battery holder</li>
+                        <li>6 AA battery holder</li>
+                        <li>4 AA battery holder</li>
                         <li>DC motor 130 size</li>
+                        <li>Johnson 32903 DC motor</li>
                         <li>Multimeter</li>
-                        <li>Dupont jumper wires male-female</li>
+                        <li>jumper wires</li>
                     </ul>
 
-                    <h4 class="btn btn-outline-info">Procedure</h4>
+                    <h4 class="btn btn-outline-info">Observations with type 130 DC motor</h4>
 
                     <ul>
-                        <li>Measure the voltage across the input voltage pins</li>
-                        <li>Measure the output voltage pins</li>
-                    </ul>
-
-                    <h4 class="btn btn-outline-info">Observations</h4>
-
-                    <ul>
-                        <li>Measured batteries voltage: 9.37 V</li>
+                        <li>Measured batteries voltage in the 6 AA battery pack: 9.37 V</li>
                         <li>Measured output voltage from L293N (motor 1): 4.03 V</li>
+                        <li>With another L293N shield the output voltage is ~ 3.7 V</li>
+                    </ul>
+
+                    <h4 class="btn btn-outline-info">Observations with 6V input voltage</h4>
+
+                    <ul>
+                        <li>Measured batteries voltage in the 4 AA battery pack: 5.9 V (partally discharged)</li>
+                        <li>Measured output voltage from L293N (motor 1):  366 mV</li>
+                    </ul>
+
+                    <h4 class="btn btn-outline-info">Observations with Johnson 32903 DC motor</h4>
+
+                    <ul>
+                        <li>Measured batteries voltage in the 6 AA battery pack: 9.22 V</li>
+                        <li>Measured output voltage from L293N (motor 1): 2.9 - 3 V</li>
                     </ul>
                 </div>    
             </div><!-- col -->
@@ -197,10 +195,72 @@
                 <!-- experiment card -->
                 <div class="border p-3 mb-5 shadow-lg">
                     <h3 class="text-uppercase">Experiment <span class="experiment-counter"></span>:</h3>
+
                     <h4 class="btn btn-outline-primary ">Equipment needed</h4>
+                    
+                    <p>Same equipment as that used in the previous experiment.</p>  
+
+                    <h4>Connections</h4>
+
                     <ul>
-                        <li></li>
-                    </ul>                    
+                        <li>L293N ENA pin to Arduino pin 13</li>
+                        <li>L293N input1 pin to Arduino pin 12</li>
+                        <li>L293N input2 pin to Arduino pin 11</li>
+                    </ul>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>sketch</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <pre>
+                                <code class="cpp">
+                                    void setup() {
+                                        pinMode (13, OUTPUT);
+                                        pinMode (12, OUTPUT);
+                                        pinMode (11, OUTPUT);
+                                      }
+                                      
+                                      void loop() {
+                                        digitalWrite (12, HIGH);
+                                        digitalWrite (11, LOW);
+                                        digitalWrite (13, HIGH);
+                                        delay (10000);
+                                        digitalWrite (13, LOW);
+                                        delay (5000);
+                                        digitalWrite (12, HIGH);
+                                        digitalWrite (11, LOW);
+                                        digitalWrite (13, HIGH);
+                                        delay (10000);
+                                        digitalWrite (13, LOW);
+                                        delay (5000); 
+                                      }                                  
+                                </code>
+                            </pre>
+                        </div>
+
+                        <h4>Observations with 9 V supply and Johnson DC motor</h4>
+
+                        <ul>
+                            <li>Voltage measured from battery pack: 9.2 V</li>
+                            <li>Voltage measured in johnson motor: 4.03 - 6.29 V</li>
+                        </ul>
+
+                        <h5>Second measurement</h5>
+
+                        <ul>
+                            <li>Voltage measured from battery pack: 8.72 V</li>
+                            <li>Voltage measured in johnson motor: 5.4 V</li>
+                        </ul>
+
+                        <h4>Observation with 6 V supply and type 130 DC motor</h4>
+
+                        <ul>
+                            <li>Voltage measured from battery pack: 5.89 V</li>
+                            <li>Voltage measured in motor: 4.4 V</li>
+                        </ul>
+                    </div>
                 </div>
             </div><!-- col -->
         </div><!-- row -->
