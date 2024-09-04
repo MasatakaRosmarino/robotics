@@ -97,6 +97,48 @@
 
                 <section class="mb-5">
                     <h5>Example:</h5>
+
+                    <p>Example here...</p>
+                </section>
+
+                <section class="mb-5">
+                    <h2 id="how-to-calculate-the-motor-torque-for-a-mobile-robot">How to Calculate the Motor Torque for a Mobile Robot</h2>
+                    <p>When it comes to a mobile robot, having sufficient power to perform tasks is crucial, and the selection and calculation of power is a thoughtful process. In this discussion, we will explore how to calculate the power parameters of a mobile robot to facilitate the further discussion of selecting an appropriate power system.</p>
+                    <p>Prior to calculations, we need to have a basic understanding or expectation of our robot&#39;s size, usage, and performance. Let&#39;s assume that we are creating a service robot that&#39;s intended for indoor use, with a chassis diameter of <em>400 mm</em>. It&#39;s designed to achieve a speed of <em>1.2 m/s</em>, carry a payload of <em>20 kg</em>, and has four direct-drive wheels.The robot will operate on surfaces such as marble, wooden floors, or carpet.</p>
+                    <h3 id="1-calculation-of-system-parameters">1. Calculation of System Parameters</h3>
+                    <p>Firstly, we need to calculate the force required for the mobile robot. Under the robot&#39;s operating conditions, we need to overcome friction and acceleration forces. Assuming the robot is moving on a flat surface, we can calculate the frictional force using the formula <em>F_{friction} = μN</em>, where <em>μ</em> is the coefficient of friction, and <em>N</em> is the weight of the robot, which is the product of its mass and the acceleration due to gravity.</p>
+                    <p>After consulting literature, we have found that the coefficient of friction for marble is <em>μ<sub>marble</sub>=0.4</em>, <em>μ<sub>wood</sub>=0.2</em>, <em>μ<sub>carpet</sub>=0.7</em>. We will use the maximum coefficient of friction for the design, which is <em>μ=0.7</em>. Additionally, the mass of the robot is <em>20 kg</em>, and the acceleration due to gravity is approximately <em>9.8 N/kg</em>. Therefore, we can calculate the frictional force as follows:</p>
+                    <center><b><i>N = 20 kg * 9.8 N/kg = 196 N</i></b></center>
+                    <center><b><i>F<sub>friction</sub> = 0.7 * 196 N = 137.2 N</i></b></center>
+
+                    <p>We can calculate the acceleration force using the formula <strong><em>F<sub>acceleration</sub>=ma</em></strong>, where <em>m</em> is the mass of the robot, and <em>a</em> is the acceleration of the robot. Assuming that we want the robot to achieve its design speed of <em>1.2 m/s</em> within <em>5s</em>, we can calculate the acceleration force as follows:</p>
+                    <center><b><i>a = (1.2 m/s) / 5 s = 0.24 m/s²</i></b></center>
+                    <center><b><i>F<sub>acceleration</sub> = 20 kg * 0.24 N/kg = 4.8 N</i></b></center>
+
+                    <p>Hence, summing up the frictional force and the acceleration force gives the total force required for the robot to move:</p>
+                    <center><b><i>F = F<sub>friction</sub> + F<sub>acceleration</sub> = 137.2 N + 4.8 N = 142 N</i></b></center>
+
+
+                    <h3 id="2-selection-of-wheel-type">2. Selection of Wheel Type</h3>
+                    <p>The wheels should be designed to provide good traction on all surfaces. Soft rubber material would be a good choice since it provides good grip on both smooth surfaces like marble and wood, and rough surfaces like carpet. The wheel diameter should be large enough to provide good ground clearance but not too large to avoid insufficient torque or unstable movement of the robot. A wheel with a radius of <em>r=0.1 m</em> is a reasonable compromise.</p>
+                    <h3 id="3-design-of-motor-parameters3-design-of-motor-parameters">3. Design of Motor Parameters3. Design of Motor Parameters</h3>
+                    <p>We need to select a brushless motor that can provide the required force. The torque <em>τ</em> provided by the motor can be calculated using the formula <em>τ = Fr</em>, where <em>F</em> is the force required by the mobile robot, and <em>r</em> is the radius of the wheel. Since our design is a direct-drive system with two wheels, each motor only needs to provide a quarter of the total torque. We are using wheels with a radius of <em>r=0.1 m</em>, so we need the motor to provide a torque of:</p>
+                    <center><b><i>τ = (142 N * 0.1 m) / 4 = 3.55 Nm</i></b></center>
+
+                    <p>Then, with a design speed of $$1.2 m/s$$ and wheel radius of $$r=0.1 m$$, we can calculate the required rated speed of the motor:</p>
+                    <center><b><i>n = (1.2 m/s * 60 s) / (2π * 0.1 m) ≈ 114.6 rpm</i></b></center>
+
+                    <p>In addition, a safety factor of usually <em>1.5\thicksim2</em> is adopted to ensure that the robot can move reliably under all conditions. Here, we adopt a safety factor of <em>2</em>. Therefore, we need to select a brushless motor with a rated torque <em>τ = 7.1Nm</em>.</p>
+                    <h3 id="4-power-design">4. Power Design</h3>
+                    <p>Based on the calculations above, assuming we select a brushless motor with a rated voltage of <em>U=24V</em>, rated torque of <em>τ = 7.1Nm</em>, and rated speed of <em>n=140rpm</em>, the required power of the motor can be calculated using the formula <em>P=τω</em>, where <em>τ</em> is the torque provided by the motor and <em>ω</em> is the angular velocity of the motor. Thus:</p>
+                    <center><b><i>ω = (140 rpm * 2π) / 60 ≈ 14.7 rad/s</i></b></center>
+                    <center><b><i>P = 7.1 Nm * 14.7 rad/s ≈ 104.4 W</i></b></center>
+
+                    <p>The total power required for four motors is <em>P<sub>total</sub>= 4 * 104.4 W = 417.6 W</em>, and the rated voltage of the selected motors is <em>U=24V</em>, we can calculate the required current:</p>
+                    <center><b><i>I = P<sub>total</sub>/U = 17.4 A</i></b></center>
+
+                    <p>Therefore, the minimum capacity of the power battery should be <em>17.4Ah</em> in order to power the robot for 1 hour of operation. If the robot needs to run for a longer period of time.</p>
+
                 </section>
             </div>
         </div>
