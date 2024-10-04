@@ -1,0 +1,2 @@
+in the first work session local repository is on branch dev, remote repository is also on branch dev.
+If reinitiating the local repository make sure to create a local branch called dev and continue pushing to remote branch dev.

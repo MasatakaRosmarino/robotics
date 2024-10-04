@@ -105,6 +105,7 @@ function showPagesMenu(){
         menuList.push(createMenuElement(currentUrlFolder + "/9g-microservo.html", "dropdown-item", "9g microservo"));
         menuList.push(createMenuElement(currentUrlFolder + "/standard-servo.html", "dropdown-item", "Standard servo"));
         menuList.push(createMenuElement(currentUrlFolder + "/kingmax-DCS16942CHV-servo.html", "dropdown-item", "kingmax-DCS16942CHV servo"));
+        menuList.push(createMenuElement(currentUrlFolder + "/test-of-cheap-servos-brands.html", "dropdown-item", "cheap servo brands"));
     }
     
     if(currentUrlFolder.includes("mechanics")){
